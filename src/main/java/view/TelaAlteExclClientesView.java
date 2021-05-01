@@ -5,7 +5,9 @@
  */
 package view;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import utils.Validador;
 
 /**
  *
@@ -29,7 +31,6 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btgSexoCliente = new javax.swing.ButtonGroup();
         pnlPrincipalAltExcClientes = new javax.swing.JPanel();
         pnlTituloAltExcClientes = new javax.swing.JPanel();
         lblTituloAltExcClientes = new javax.swing.JLabel();
@@ -37,40 +38,37 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         btnExcluirClientes = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAltExcClientes = new javax.swing.JTable();
-        txtIdConsCli = new javax.swing.JTextField();
-        lblIdConsCli = new javax.swing.JLabel();
         lblNomeConsCli = new javax.swing.JLabel();
-        txtNomeConsCli = new javax.swing.JTextField();
         pnlInfoConsClientes = new javax.swing.JPanel();
-        rbtAltExcSexFemCli = new javax.swing.JRadioButton();
         txtAltExcCidCli = new javax.swing.JTextField();
         lblAltExcTelCli = new javax.swing.JLabel();
         lblAltExcCepCli = new javax.swing.JLabel();
         lblAltExcLograCli = new javax.swing.JLabel();
         lblAltExcSexCli = new javax.swing.JLabel();
         txtAltExcNumCepCli = new javax.swing.JTextField();
-        rbtAltExcSexMascCli = new javax.swing.JRadioButton();
         lblAltExcIdCli = new javax.swing.JLabel();
         lblAltExcNomeCli = new javax.swing.JLabel();
         txtAltExcCepCli = new javax.swing.JFormattedTextField();
         lblAltExcComplCli = new javax.swing.JLabel();
         txtAltExcEmailCli = new javax.swing.JTextField();
-        txtAltExcIdCli = new javax.swing.JTextField();
-        txtAltExcCpfCli = new javax.swing.JFormattedTextField();
         lblAltExcNumCepCli = new javax.swing.JLabel();
         txtAltExcComplCli = new javax.swing.JTextField();
         lblAltExcECCli = new javax.swing.JLabel();
         txtAltExcLograCli = new javax.swing.JTextField();
         lblAltExcCidCli = new javax.swing.JLabel();
         txtAltExcTelCli = new javax.swing.JFormattedTextField();
-        txtAltExcDataNascCli = new javax.swing.JFormattedTextField();
         lblAltExcCpfCli = new javax.swing.JLabel();
-        cbbAltExcECCli = new javax.swing.JComboBox<>();
         lblAltExcDataNascCli = new javax.swing.JLabel();
         txtAltExcNomeCli = new javax.swing.JTextField();
         lblAltExcEmailCli = new javax.swing.JLabel();
+        lblAltExcIdCliAt = new javax.swing.JLabel();
+        lblAltExcCpfCliAt = new javax.swing.JLabel();
+        lblAltExcDataNasCliAt = new javax.swing.JLabel();
+        cbbAltExcSexoCliAt = new javax.swing.JComboBox<>();
+        cbbAltExcEstCivCliAt = new javax.swing.JComboBox<>();
         lblInfoAltExcClientes = new javax.swing.JLabel();
         btnConsutarClientes = new javax.swing.JButton();
+        txtCpfCliCons = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Alteração e Exclusão de Clientes");
@@ -107,6 +105,11 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         btnAlterarClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         btnAlterarClientes.setForeground(new java.awt.Color(0, 0, 0));
         btnAlterarClientes.setText("Alterar");
+        btnAlterarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarClientesActionPerformed(evt);
+            }
+        });
 
         btnExcluirClientes.setBackground(new java.awt.Color(204, 255, 204));
         btnExcluirClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
@@ -125,7 +128,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "CPF", "Nome", "E-mail", "DataNasc", "Telefone", "Sexo", "CEP", "Logradouro", "Numero", "Cidade", "Complemento", "Estado Civil"
+                "ID Cliente", "CPF", "Nome", "E-mail", "DataNasc", "Telefone", "Sexo", "CEP", "Logradouro", "Numero", "Cidade", "Complemento", "Estado Civil"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -140,33 +143,13 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         tblAltExcClientes.setGridColor(new java.awt.Color(102, 102, 102));
         jScrollPane1.setViewportView(tblAltExcClientes);
 
-        txtIdConsCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdConsCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtIdConsCli.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdConsCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        lblIdConsCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        lblIdConsCli.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdConsCli.setText("ID:");
-
         lblNomeConsCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblNomeConsCli.setForeground(new java.awt.Color(204, 255, 204));
-        lblNomeConsCli.setText("Nome:");
-
-        txtNomeConsCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtNomeConsCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtNomeConsCli.setForeground(new java.awt.Color(0, 0, 0));
-        txtNomeConsCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        lblNomeConsCli.setText("CPF:");
 
         pnlInfoConsClientes.setBackground(new java.awt.Color(0, 0, 0));
 
-        rbtAltExcSexFemCli.setBackground(new java.awt.Color(0, 0, 0));
-        btgSexoCliente.add(rbtAltExcSexFemCli);
-        rbtAltExcSexFemCli.setForeground(new java.awt.Color(204, 255, 204));
-        rbtAltExcSexFemCli.setText("F");
-        rbtAltExcSexFemCli.setActionCommand("F");
-
-        txtAltExcCidCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcCidCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcCidCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcCidCli.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcCidCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -187,16 +170,10 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         lblAltExcSexCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcSexCli.setText("Sexo:");
 
-        txtAltExcNumCepCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcNumCepCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcNumCepCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcNumCepCli.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcNumCepCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        rbtAltExcSexMascCli.setBackground(new java.awt.Color(0, 0, 0));
-        btgSexoCliente.add(rbtAltExcSexMascCli);
-        rbtAltExcSexMascCli.setForeground(new java.awt.Color(204, 255, 204));
-        rbtAltExcSexMascCli.setText("M");
-        rbtAltExcSexMascCli.setActionCommand("M");
 
         lblAltExcIdCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblAltExcIdCli.setForeground(new java.awt.Color(204, 255, 204));
@@ -206,7 +183,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         lblAltExcNomeCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcNomeCli.setText("Nome:");
 
-        txtAltExcCepCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcCepCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcCepCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtAltExcCepCli.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -220,7 +197,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         lblAltExcComplCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcComplCli.setText("Complemento:");
 
-        txtAltExcEmailCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcEmailCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcEmailCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcEmailCli.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcEmailCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -230,26 +207,11 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
             }
         });
 
-        txtAltExcIdCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcIdCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAltExcIdCli.setForeground(new java.awt.Color(0, 0, 0));
-        txtAltExcIdCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        txtAltExcCpfCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcCpfCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-        txtAltExcCpfCli.setForeground(new java.awt.Color(0, 0, 0));
-        try {
-            txtAltExcCpfCli.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtAltExcCpfCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-
         lblAltExcNumCepCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblAltExcNumCepCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcNumCepCli.setText("Numero:");
 
-        txtAltExcComplCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcComplCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcComplCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcComplCli.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcComplCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -258,7 +220,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         lblAltExcECCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcECCli.setText("Estado Civil:");
 
-        txtAltExcLograCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcLograCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcLograCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcLograCli.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcLograCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -267,7 +229,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         lblAltExcCidCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcCidCli.setText("Cidade:");
 
-        txtAltExcTelCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcTelCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcTelCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtAltExcTelCli.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -277,31 +239,15 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         }
         txtAltExcTelCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        txtAltExcDataNascCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcDataNascCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-        txtAltExcDataNascCli.setForeground(new java.awt.Color(0, 0, 0));
-        try {
-            txtAltExcDataNascCli.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtAltExcDataNascCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-
         lblAltExcCpfCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblAltExcCpfCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcCpfCli.setText("CPF:");
-
-        cbbAltExcECCli.setBackground(new java.awt.Color(204, 255, 204));
-        cbbAltExcECCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        cbbAltExcECCli.setForeground(new java.awt.Color(0, 0, 0));
-        cbbAltExcECCli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Solteiro(a)", "Casado(a)", "Viúvo(a)", "Divorciado(a)", "União Estável" }));
-        cbbAltExcECCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
         lblAltExcDataNascCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblAltExcDataNascCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcDataNascCli.setText("Data de Nascimento:");
 
-        txtAltExcNomeCli.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcNomeCli.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcNomeCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcNomeCli.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcNomeCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -310,12 +256,39 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         lblAltExcEmailCli.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcEmailCli.setText("E-mail:");
 
+        lblAltExcIdCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcIdCliAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcIdCliAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcIdCliAt.setText("______");
+
+        lblAltExcCpfCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcCpfCliAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcCpfCliAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcCpfCliAt.setText("______");
+
+        lblAltExcDataNasCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcDataNasCliAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcDataNasCliAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcDataNasCliAt.setText("______");
+
+        cbbAltExcSexoCliAt.setBackground(new java.awt.Color(255, 255, 255));
+        cbbAltExcSexoCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cbbAltExcSexoCliAt.setForeground(new java.awt.Color(0, 0, 0));
+        cbbAltExcSexoCliAt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Masculino", "Feminino" }));
+        cbbAltExcSexoCliAt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+
+        cbbAltExcEstCivCliAt.setBackground(new java.awt.Color(255, 255, 255));
+        cbbAltExcEstCivCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cbbAltExcEstCivCliAt.setForeground(new java.awt.Color(0, 0, 0));
+        cbbAltExcEstCivCliAt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione..", "Solteiro(a)", "Casado(a)", "Viúvo(a)", "Divorciado(a)", "União Estável" }));
+        cbbAltExcEstCivCliAt.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+
         javax.swing.GroupLayout pnlInfoConsClientesLayout = new javax.swing.GroupLayout(pnlInfoConsClientes);
         pnlInfoConsClientes.setLayout(pnlInfoConsClientesLayout);
         pnlInfoConsClientesLayout.setHorizontalGroup(
             pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
                         .addComponent(lblAltExcEmailCli)
@@ -324,7 +297,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(lblAltExcECCli)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cbbAltExcECCli, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbbAltExcEstCivCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
                         .addComponent(lblAltExcComplCli)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -335,29 +308,27 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                                 .addComponent(lblAltExcDataNascCli)
                                 .addComponent(lblAltExcNomeCli))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
-                                    .addComponent(txtAltExcDataNascCli, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(386, 386, 386)
+                                    .addComponent(lblAltExcDataNasCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(315, 315, 315)
                                     .addComponent(lblAltExcSexCli)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(rbtAltExcSexMascCli)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(rbtAltExcSexFemCli))
+                                    .addComponent(cbbAltExcSexoCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(txtAltExcNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
                             .addComponent(lblAltExcLograCli)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtAltExcLograCli, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInfoConsClientesLayout.createSequentialGroup()
                             .addGap(120, 120, 120)
                             .addComponent(lblAltExcIdCli)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtAltExcIdCli, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lblAltExcIdCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblAltExcCpfCli)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtAltExcCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblAltExcCpfCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(pnlInfoConsClientesLayout.createSequentialGroup()
                             .addComponent(lblAltExcCepCli)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -376,7 +347,7 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                             .addComponent(lblAltExcNumCepCli)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(txtAltExcNumCepCli, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         pnlInfoConsClientesLayout.setVerticalGroup(
             pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,22 +355,21 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcIdCli)
-                    .addComponent(txtAltExcIdCli, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAltExcCpfCli)
-                    .addComponent(txtAltExcCpfCli, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(lblAltExcIdCliAt)
+                    .addComponent(lblAltExcCpfCliAt))
+                .addGap(35, 35, 35)
                 .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcNomeCli)
                     .addComponent(txtAltExcNomeCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcDataNascCli)
-                    .addComponent(txtAltExcDataNascCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAltExcTelCli)
                     .addComponent(txtAltExcTelCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAltExcSexCli)
-                    .addComponent(rbtAltExcSexMascCli)
-                    .addComponent(rbtAltExcSexFemCli))
+                    .addComponent(lblAltExcDataNasCliAt)
+                    .addComponent(cbbAltExcSexoCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(pnlInfoConsClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcNumCepCli)
@@ -421,11 +391,11 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                     .addComponent(txtAltExcEmailCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAltExcEmailCli)
                     .addComponent(lblAltExcECCli)
-                    .addComponent(cbbAltExcECCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbbAltExcEstCivCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        pnlInfoConsClientesLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {cbbAltExcECCli, txtAltExcCepCli, txtAltExcComplCli, txtAltExcCpfCli, txtAltExcDataNascCli, txtAltExcEmailCli, txtAltExcLograCli, txtAltExcNomeCli, txtAltExcNumCepCli, txtAltExcTelCli});
+        pnlInfoConsClientesLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAltExcCepCli, txtAltExcComplCli, txtAltExcEmailCli, txtAltExcLograCli, txtAltExcNomeCli, txtAltExcNumCepCli, txtAltExcTelCli});
 
         lblInfoAltExcClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblInfoAltExcClientes.setForeground(new java.awt.Color(204, 255, 204));
@@ -440,44 +410,47 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
             }
         });
 
+        txtCpfCliCons.setBackground(new java.awt.Color(255, 255, 255));
+        txtCpfCliCons.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        txtCpfCliCons.setForeground(new java.awt.Color(0, 0, 0));
+        try {
+            txtCpfCliCons.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCpfCliCons.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout pnlPrincipalAltExcClientesLayout = new javax.swing.GroupLayout(pnlPrincipalAltExcClientes);
         pnlPrincipalAltExcClientes.setLayout(pnlPrincipalAltExcClientesLayout);
         pnlPrincipalAltExcClientesLayout.setHorizontalGroup(
             pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTituloAltExcClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                        .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(pnlInfoConsClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btnAlterarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(113, 113, 113)
-                                .addComponent(btnExcluirClientes)
-                                .addGap(92, 92, 92)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                                .addComponent(lblIdConsCli)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtIdConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(140, 140, 140)
-                                .addComponent(lblNomeConsCli)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNomeConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                                .addComponent(btnConsutarClientes)))))
+                .addContainerGap()
+                .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalAltExcClientesLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblInfoAltExcClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(328, 328, 328))
+            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
+                .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
+                        .addGap(284, 284, 284)
+                        .addComponent(btnAlterarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113)
+                        .addComponent(btnExcluirClientes))
+                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
+                        .addGap(240, 240, 240)
+                        .addComponent(lblNomeConsCli)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCpfCliCons, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(192, 192, 192)
+                        .addComponent(btnConsutarClientes))
+                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(pnlInfoConsClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         pnlPrincipalAltExcClientesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAlterarClientes, btnExcluirClientes});
@@ -490,11 +463,9 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
                 .addComponent(lblInfoAltExcClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdConsCli)
-                    .addComponent(txtIdConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNomeConsCli)
-                    .addComponent(txtNomeConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsutarClientes))
+                    .addComponent(btnConsutarClientes)
+                    .addComponent(txtCpfCliCons, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -507,8 +478,6 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
         );
 
         pnlPrincipalAltExcClientesLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlterarClientes, btnExcluirClientes});
-
-        pnlPrincipalAltExcClientesLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnConsutarClientes, txtIdConsCli, txtNomeConsCli});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -529,18 +498,31 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAltExcEmailCliActionPerformed
 
     private void btnConsutarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsutarClientesActionPerformed
-        if(txtIdConsCli.getText().trim().equals("") || txtNomeConsCli.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this, "Informe um dos parametros para cosulta");
-        }
-        else{
-            if(txtIdConsCli.getText().trim().equals("")){
-                String nomeCliConsul = txtNomeConsCli.getText();
-            }
-            else{
-                int idCliCons = Integer.parseInt(txtNomeConsCli.getText());
-            }
+        Validador validacao = new Validador();
+        
+        validacao.ValidarCpf(txtCpfCliCons);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Informe o CPF para consulta");
         }
     }//GEN-LAST:event_btnConsutarClientesActionPerformed
+
+    private void btnAlterarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarClientesActionPerformed
+        Validador validacao = new Validador();
+        
+        validacao.ValidarTextos(txtAltExcNomeCli);
+        validacao.ValidarTelefone(txtAltExcTelCli);
+        validacao.ValidarComboBox(cbbAltExcSexoCliAt);
+        validacao.ValidarCep(txtAltExcCepCli);
+        validacao.ValidarTextos(txtAltExcCidCli);
+        validacao.ValidarNumero(txtAltExcNumCepCli);
+        validacao.ValidarTextos(txtAltExcLograCli);
+        validacao.ValidarTextos(txtAltExcEmailCli);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha corretamente os campos em vermelho!");
+        }
+    }//GEN-LAST:event_btnAlterarClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -581,47 +563,43 @@ public class TelaAlteExclClientesView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup btgSexoCliente;
     private javax.swing.JButton btnAlterarClientes;
     private javax.swing.JButton btnConsutarClientes;
     private javax.swing.JButton btnExcluirClientes;
-    private javax.swing.JComboBox<String> cbbAltExcECCli;
+    private javax.swing.JComboBox<String> cbbAltExcEstCivCliAt;
+    private javax.swing.JComboBox<String> cbbAltExcSexoCliAt;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAltExcCepCli;
     private javax.swing.JLabel lblAltExcCidCli;
     private javax.swing.JLabel lblAltExcComplCli;
     private javax.swing.JLabel lblAltExcCpfCli;
+    private javax.swing.JLabel lblAltExcCpfCliAt;
+    private javax.swing.JLabel lblAltExcDataNasCliAt;
     private javax.swing.JLabel lblAltExcDataNascCli;
     private javax.swing.JLabel lblAltExcECCli;
     private javax.swing.JLabel lblAltExcEmailCli;
     private javax.swing.JLabel lblAltExcIdCli;
+    private javax.swing.JLabel lblAltExcIdCliAt;
     private javax.swing.JLabel lblAltExcLograCli;
     private javax.swing.JLabel lblAltExcNomeCli;
     private javax.swing.JLabel lblAltExcNumCepCli;
     private javax.swing.JLabel lblAltExcSexCli;
     private javax.swing.JLabel lblAltExcTelCli;
-    private javax.swing.JLabel lblIdConsCli;
     private javax.swing.JLabel lblInfoAltExcClientes;
     private javax.swing.JLabel lblNomeConsCli;
     private javax.swing.JLabel lblTituloAltExcClientes;
     private javax.swing.JPanel pnlInfoConsClientes;
     private javax.swing.JPanel pnlPrincipalAltExcClientes;
     private javax.swing.JPanel pnlTituloAltExcClientes;
-    private javax.swing.JRadioButton rbtAltExcSexFemCli;
-    private javax.swing.JRadioButton rbtAltExcSexMascCli;
     private javax.swing.JTable tblAltExcClientes;
     private javax.swing.JFormattedTextField txtAltExcCepCli;
     private javax.swing.JTextField txtAltExcCidCli;
     private javax.swing.JTextField txtAltExcComplCli;
-    private javax.swing.JFormattedTextField txtAltExcCpfCli;
-    private javax.swing.JFormattedTextField txtAltExcDataNascCli;
     private javax.swing.JTextField txtAltExcEmailCli;
-    private javax.swing.JTextField txtAltExcIdCli;
     private javax.swing.JTextField txtAltExcLograCli;
     private javax.swing.JTextField txtAltExcNomeCli;
     private javax.swing.JTextField txtAltExcNumCepCli;
     private javax.swing.JFormattedTextField txtAltExcTelCli;
-    private javax.swing.JTextField txtIdConsCli;
-    private javax.swing.JTextField txtNomeConsCli;
+    private javax.swing.JFormattedTextField txtCpfCliCons;
     // End of variables declaration//GEN-END:variables
 }
