@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import utils.Validador;
 
 /**
  *
@@ -36,28 +37,26 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
         pnlInfoAlterExclVend = new javax.swing.JPanel();
         lblAltExcValorUniVend = new javax.swing.JLabel();
         lblAltExcIdCliVend = new javax.swing.JLabel();
-        txtAltExcValorTotVend = new javax.swing.JTextField();
         txtAltExcIQuantProdVend = new javax.swing.JTextField();
         lblAltExcQuantProdVend = new javax.swing.JLabel();
         lblAltExcIdProdVend = new javax.swing.JLabel();
         txtAltExcDataVend = new javax.swing.JFormattedTextField();
         txtAltExcIdProdVend = new javax.swing.JTextField();
-        txtAltExcValorUniVend = new javax.swing.JTextField();
         lblAltExcValorTotVend = new javax.swing.JLabel();
         lblAltExcDataVend = new javax.swing.JLabel();
         lblAltExcIdVend = new javax.swing.JLabel();
         lblAltExcCpfCliVend = new javax.swing.JLabel();
-        txtAltExcCpfCliVend = new javax.swing.JFormattedTextField();
-        txtAltExcIdVend = new javax.swing.JTextField();
-        txtAltExcIdCliVend = new javax.swing.JTextField();
+        lblAltExcIdVendAt = new javax.swing.JLabel();
+        lblAltExcIdCliAt = new javax.swing.JLabel();
+        lblAltExcCpfCliAt = new javax.swing.JLabel();
+        lblAltExcValTotVendAt = new javax.swing.JLabel();
+        lblAltExcValUniVendAt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAltExcVendas = new javax.swing.JTable();
         pnlInfoConstVendas = new javax.swing.JPanel();
         lblInfoConsVendas = new javax.swing.JLabel();
         pnlInfoConsVendas = new javax.swing.JPanel();
         txtCpfCliCosVend = new javax.swing.JFormattedTextField();
-        txtIdConsVend = new javax.swing.JTextField();
-        lblIdConsVend = new javax.swing.JLabel();
         lblCpfCliConsVend = new javax.swing.JLabel();
         btnConsutarClientes1 = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
@@ -105,12 +104,7 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
         lblAltExcIdCliVend.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcIdCliVend.setText("ID Cliente:");
 
-        txtAltExcValorTotVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcValorTotVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAltExcValorTotVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtAltExcValorTotVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        txtAltExcIQuantProdVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcIQuantProdVend.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcIQuantProdVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcIQuantProdVend.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcIQuantProdVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -123,7 +117,7 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
         lblAltExcIdProdVend.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcIdProdVend.setText("ID Produto:");
 
-        txtAltExcDataVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcDataVend.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcDataVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtAltExcDataVend.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -132,16 +126,16 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         txtAltExcDataVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtAltExcDataVend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAltExcDataVendActionPerformed(evt);
+            }
+        });
 
-        txtAltExcIdProdVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtAltExcIdProdVend.setBackground(new java.awt.Color(255, 255, 255));
         txtAltExcIdProdVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtAltExcIdProdVend.setForeground(new java.awt.Color(0, 0, 0));
         txtAltExcIdProdVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        txtAltExcValorUniVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcValorUniVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAltExcValorUniVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtAltExcValorUniVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
         lblAltExcValorTotVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblAltExcValorTotVend.setForeground(new java.awt.Color(204, 255, 204));
@@ -159,25 +153,30 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
         lblAltExcCpfCliVend.setForeground(new java.awt.Color(204, 255, 204));
         lblAltExcCpfCliVend.setText("CPF Cliente:");
 
-        txtAltExcCpfCliVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcCpfCliVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-        txtAltExcCpfCliVend.setForeground(new java.awt.Color(0, 0, 0));
-        try {
-            txtAltExcCpfCliVend.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtAltExcCpfCliVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcIdVendAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcIdVendAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcIdVendAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcIdVendAt.setText("__________");
 
-        txtAltExcIdVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcIdVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAltExcIdVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtAltExcIdVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        lblAltExcIdCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcIdCliAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcIdCliAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcIdCliAt.setText("__________");
 
-        txtAltExcIdCliVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtAltExcIdCliVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAltExcIdCliVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtAltExcIdCliVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        lblAltExcCpfCliAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcCpfCliAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcCpfCliAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcCpfCliAt.setText("__________");
+
+        lblAltExcValTotVendAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcValTotVendAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcValTotVendAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcValTotVendAt.setText("__________");
+
+        lblAltExcValUniVendAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblAltExcValUniVendAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblAltExcValUniVendAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAltExcValUniVendAt.setText("__________");
 
         javax.swing.GroupLayout pnlInfoAlterExclVendLayout = new javax.swing.GroupLayout(pnlInfoAlterExclVend);
         pnlInfoAlterExclVend.setLayout(pnlInfoAlterExclVendLayout);
@@ -186,87 +185,82 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
             .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInfoAlterExclVendLayout.createSequentialGroup()
+                        .addComponent(lblAltExcIdVend)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblAltExcIdVendAt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(229, 229, 229))
                     .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
-                        .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
                                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
-                                        .addComponent(lblAltExcCpfCliVend)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtAltExcCpfCliVend, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
                                         .addComponent(lblAltExcIdCliVend)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtAltExcIdCliVend, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(174, 174, 174))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInfoAlterExclVendLayout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(lblAltExcDataVend)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAltExcDataVend, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
-                                .addComponent(lblAltExcIdProdVend)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAltExcIdProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
+                                        .addComponent(lblAltExcIdCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(158, 158, 158))
+                                    .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
+                                        .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlInfoAlterExclVendLayout.createSequentialGroup()
+                                                .addGap(46, 46, 46)
+                                                .addComponent(lblAltExcDataVend)
+                                                .addGap(30, 30, 30)
+                                                .addComponent(txtAltExcDataVend, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
+                                                .addComponent(lblAltExcCpfCliVend)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblAltExcCpfCliAt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(157, 157, 157)))
                                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblAltExcIdProdVend)
                                     .addComponent(lblAltExcValorUniVend)
                                     .addComponent(lblAltExcQuantProdVend))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtAltExcIQuantProdVend)
-                                    .addComponent(txtAltExcValorUniVend, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(lblAltExcValorTotVend)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtAltExcValorTotVend, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(lblAltExcIdVend)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtAltExcIdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                                .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtAltExcIQuantProdVend, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                                        .addComponent(lblAltExcValUniVendAt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtAltExcIdProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
+                                .addGap(207, 207, 207)
+                                .addComponent(lblAltExcValorTotVend)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblAltExcValTotVendAt, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(22, 22, 22))))
         );
         pnlInfoAlterExclVendLayout.setVerticalGroup(
             pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoAlterExclVendLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcIdVend)
-                    .addComponent(txtAltExcIdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                    .addComponent(lblAltExcIdVendAt))
+                .addGap(29, 29, 29)
                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcIdCliVend)
-                    .addComponent(txtAltExcIdCliVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAltExcIdProdVend)
-                    .addComponent(txtAltExcIdProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAltExcIdProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAltExcIdCliAt))
                 .addGap(37, 37, 37)
                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltExcCpfCliVend)
-                    .addComponent(txtAltExcCpfCliVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtAltExcIQuantProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAltExcQuantProdVend))
-                .addGap(38, 38, 38)
+                    .addComponent(lblAltExcQuantProdVend)
+                    .addComponent(lblAltExcCpfCliAt))
+                .addGap(36, 36, 36)
                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtAltExcValorUniVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblAltExcValorUniVend))
+                        .addComponent(lblAltExcValorUniVend)
+                        .addComponent(lblAltExcValUniVendAt))
                     .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblAltExcDataVend)
                         .addComponent(txtAltExcDataVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
+                .addGap(47, 47, 47)
                 .addGroup(pnlInfoAlterExclVendLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAltExcValorTotVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAltExcValorTotVend))
+                    .addComponent(lblAltExcValorTotVend)
+                    .addComponent(lblAltExcValTotVendAt))
                 .addContainerGap())
         );
-
-        pnlInfoAlterExclVendLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAltExcDataVend, txtAltExcValorUniVend});
-
-        pnlInfoAlterExclVendLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAltExcCpfCliVend, txtAltExcIdCliVend});
 
         tblAltExcVendas.setBackground(new java.awt.Color(0, 0, 0));
         tblAltExcVendas.setModel(new javax.swing.table.DefaultTableModel(
@@ -289,11 +283,11 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
 
         lblInfoConsVendas.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblInfoConsVendas.setForeground(new java.awt.Color(204, 255, 204));
-        lblInfoConsVendas.setText("Informe o ID da venda ou o CPF do Cliente para consulta");
+        lblInfoConsVendas.setText("Informe o CPF do Cliente para consulta");
 
         pnlInfoConsVendas.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtCpfCliCosVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtCpfCliCosVend.setBackground(new java.awt.Color(255, 255, 255));
         txtCpfCliCosVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtCpfCliCosVend.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -307,15 +301,6 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
                 txtCpfCliCosVendActionPerformed(evt);
             }
         });
-
-        txtIdConsVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdConsVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtIdConsVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdConsVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        lblIdConsVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        lblIdConsVend.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdConsVend.setText("ID:");
 
         lblCpfCliConsVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblCpfCliConsVend.setForeground(new java.awt.Color(204, 255, 204));
@@ -335,44 +320,36 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
         pnlInfoConsVendasLayout.setHorizontalGroup(
             pnlInfoConsVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsVendasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIdConsVend)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdConsVend, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135)
+                .addGap(187, 187, 187)
                 .addComponent(lblCpfCliConsVend)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCpfCliCosVend, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(150, 150, 150)
                 .addComponent(btnConsutarClientes1)
-                .addContainerGap())
+                .addContainerGap(211, Short.MAX_VALUE))
         );
         pnlInfoConsVendasLayout.setVerticalGroup(
             pnlInfoConsVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsVendasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInfoConsVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdConsVend)
-                    .addComponent(txtIdConsVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCpfCliConsVend)
-                    .addComponent(txtCpfCliCosVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsutarClientes1))
-                .addContainerGap())
+                    .addComponent(btnConsutarClientes1)
+                    .addComponent(txtCpfCliCosVend))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        pnlInfoConsVendasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCpfCliCosVend, txtIdConsVend});
 
         javax.swing.GroupLayout pnlInfoConstVendasLayout = new javax.swing.GroupLayout(pnlInfoConstVendas);
         pnlInfoConstVendas.setLayout(pnlInfoConstVendasLayout);
         pnlInfoConstVendasLayout.setHorizontalGroup(
             pnlInfoConstVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInfoConstVendasLayout.createSequentialGroup()
-                .addContainerGap(205, Short.MAX_VALUE)
-                .addComponent(lblInfoConsVendas)
-                .addGap(174, 174, 174))
             .addGroup(pnlInfoConstVendasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlInfoConsVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInfoConstVendasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblInfoConsVendas)
+                .addGap(241, 241, 241))
         );
         pnlInfoConstVendasLayout.setVerticalGroup(
             pnlInfoConstVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,7 +368,7 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
             .addGroup(pnlInfoAltExcVendLayout.createSequentialGroup()
                 .addGap(143, 143, 143)
                 .addComponent(pnlInfoAlterExclVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInfoAltExcVendLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlInfoConstVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -468,22 +445,22 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConsutarClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsutarClientes1ActionPerformed
-        if(txtIdConsVend.getText().trim().equals("") || txtCpfCliCosVend.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this, "Informe um dos valores para consulta");
-        }
-        else{
-            if(txtIdConsVend.getText().trim().equals("")){
-                int idVendCons = Integer.parseInt(txtIdConsVend.getText());
-            }
-            else{
-                int cpfCliCons = Integer.parseInt(txtCpfCliCosVend.getText());
-            }
+        Validador validacao = new Validador();
+        
+        validacao.ValidarCpf(txtCpfCliCosVend);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Informe corretamente o CPj do cliente para consulta");
         }
     }//GEN-LAST:event_btnConsutarClientes1ActionPerformed
 
     private void txtCpfCliCosVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfCliCosVendActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCpfCliCosVendActionPerformed
+
+    private void txtAltExcDataVendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAltExcDataVendActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAltExcDataVendActionPerformed
 
     /**
      * @param args the command line arguments
@@ -532,16 +509,20 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
     private javax.swing.JButton btnConsutarClientes1;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAltExcCpfCliAt;
     private javax.swing.JLabel lblAltExcCpfCliVend;
     private javax.swing.JLabel lblAltExcDataVend;
+    private javax.swing.JLabel lblAltExcIdCliAt;
     private javax.swing.JLabel lblAltExcIdCliVend;
     private javax.swing.JLabel lblAltExcIdProdVend;
     private javax.swing.JLabel lblAltExcIdVend;
+    private javax.swing.JLabel lblAltExcIdVendAt;
     private javax.swing.JLabel lblAltExcQuantProdVend;
+    private javax.swing.JLabel lblAltExcValTotVendAt;
+    private javax.swing.JLabel lblAltExcValUniVendAt;
     private javax.swing.JLabel lblAltExcValorTotVend;
     private javax.swing.JLabel lblAltExcValorUniVend;
     private javax.swing.JLabel lblCpfCliConsVend;
-    private javax.swing.JLabel lblIdConsVend;
     private javax.swing.JLabel lblInfoConsVendas;
     private javax.swing.JLabel lblTituloAltExcVendas;
     private javax.swing.JPanel pnlInfoAltExcVend;
@@ -551,15 +532,9 @@ public class TelaAlteExclVendasView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPrincipalAltExcVendas;
     private javax.swing.JPanel pnlTituloAltExcVendas;
     private javax.swing.JTable tblAltExcVendas;
-    private javax.swing.JFormattedTextField txtAltExcCpfCliVend;
     private javax.swing.JFormattedTextField txtAltExcDataVend;
     private javax.swing.JTextField txtAltExcIQuantProdVend;
-    private javax.swing.JTextField txtAltExcIdCliVend;
     private javax.swing.JTextField txtAltExcIdProdVend;
-    private javax.swing.JTextField txtAltExcIdVend;
-    private javax.swing.JTextField txtAltExcValorTotVend;
-    private javax.swing.JTextField txtAltExcValorUniVend;
     private javax.swing.JFormattedTextField txtCpfCliCosVend;
-    private javax.swing.JTextField txtIdConsVend;
     // End of variables declaration//GEN-END:variables
 }

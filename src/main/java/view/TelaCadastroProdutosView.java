@@ -5,6 +5,10 @@
  */
 package view;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+import utils.Validador;
+
 /**
  *
  * @author caueg
@@ -36,18 +40,17 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
         txtMarcaProd = new javax.swing.JTextField();
         lblTamanProd = new javax.swing.JLabel();
         cbbCorProd = new javax.swing.JComboBox<>();
-        rdbModalidadeMasc = new javax.swing.JRadioButton();
         lblModalidade = new javax.swing.JLabel();
         txtPrecoProd = new javax.swing.JTextField();
         lblCorProd = new javax.swing.JLabel();
         txtIdProd = new javax.swing.JTextField();
         lblIModeloProd = new javax.swing.JLabel();
-        rdbModalidadeFem = new javax.swing.JRadioButton();
         lblQuantProdVend = new javax.swing.JLabel();
         lblIdProd = new javax.swing.JLabel();
         lblMarcaProd = new javax.swing.JLabel();
         cbbTamanhoProd = new javax.swing.JComboBox<>();
         txtModeloProd = new javax.swing.JTextField();
+        cbbModaliProd = new javax.swing.JComboBox<>();
         btnSalvar = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
 
@@ -84,7 +87,7 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
 
         pnlItensProd.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtMarcaProd.setBackground(new java.awt.Color(204, 255, 204));
+        txtMarcaProd.setBackground(new java.awt.Color(255, 255, 255));
         txtMarcaProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtMarcaProd.setForeground(new java.awt.Color(0, 0, 0));
         txtMarcaProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -93,20 +96,17 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
         lblTamanProd.setForeground(new java.awt.Color(204, 255, 204));
         lblTamanProd.setText("*Tamanho:");
 
-        cbbCorProd.setBackground(new java.awt.Color(204, 255, 204));
+        cbbCorProd.setBackground(new java.awt.Color(255, 255, 255));
+        cbbCorProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         cbbCorProd.setForeground(new java.awt.Color(0, 0, 0));
         cbbCorProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Vermelho", "Azul", "Preto", "Amarelo", "Laranja", "Verde", "Rosa", "Roxo", "Marrom", "Outros..." }));
-
-        rdbModalidadeMasc.setBackground(new java.awt.Color(0, 0, 0));
-        btgModalidade.add(rdbModalidadeMasc);
-        rdbModalidadeMasc.setForeground(new java.awt.Color(204, 255, 204));
-        rdbModalidadeMasc.setText("Masculino");
+        cbbCorProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
         lblModalidade.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblModalidade.setForeground(new java.awt.Color(204, 255, 204));
         lblModalidade.setText("*Modalidade:");
 
-        txtPrecoProd.setBackground(new java.awt.Color(204, 255, 204));
+        txtPrecoProd.setBackground(new java.awt.Color(255, 255, 255));
         txtPrecoProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtPrecoProd.setForeground(new java.awt.Color(0, 0, 0));
         txtPrecoProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -115,7 +115,7 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
         lblCorProd.setForeground(new java.awt.Color(204, 255, 204));
         lblCorProd.setText("Cor:");
 
-        txtIdProd.setBackground(new java.awt.Color(204, 255, 204));
+        txtIdProd.setBackground(new java.awt.Color(255, 255, 255));
         txtIdProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtIdProd.setForeground(new java.awt.Color(0, 0, 0));
         txtIdProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -123,16 +123,6 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
         lblIModeloProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblIModeloProd.setForeground(new java.awt.Color(204, 255, 204));
         lblIModeloProd.setText("*Modelo:");
-
-        rdbModalidadeFem.setBackground(new java.awt.Color(0, 0, 0));
-        btgModalidade.add(rdbModalidadeFem);
-        rdbModalidadeFem.setForeground(new java.awt.Color(204, 255, 204));
-        rdbModalidadeFem.setText("Feminino");
-        rdbModalidadeFem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdbModalidadeFemActionPerformed(evt);
-            }
-        });
 
         lblQuantProdVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblQuantProdVend.setForeground(new java.awt.Color(204, 255, 204));
@@ -146,14 +136,22 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
         lblMarcaProd.setForeground(new java.awt.Color(204, 255, 204));
         lblMarcaProd.setText("*Marca:");
 
-        cbbTamanhoProd.setBackground(new java.awt.Color(204, 255, 204));
+        cbbTamanhoProd.setBackground(new java.awt.Color(255, 255, 255));
+        cbbTamanhoProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         cbbTamanhoProd.setForeground(new java.awt.Color(0, 0, 0));
         cbbTamanhoProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "33/34", "34/35", "35/36", "36/37", "37/38", "38/39", "39/40", "40/41", "41/42", "42/43", "43/44" }));
+        cbbTamanhoProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
-        txtModeloProd.setBackground(new java.awt.Color(204, 255, 204));
+        txtModeloProd.setBackground(new java.awt.Color(255, 255, 255));
         txtModeloProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtModeloProd.setForeground(new java.awt.Color(0, 0, 0));
         txtModeloProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+
+        cbbModaliProd.setBackground(new java.awt.Color(255, 255, 255));
+        cbbModaliProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cbbModaliProd.setForeground(new java.awt.Color(0, 0, 0));
+        cbbModaliProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Masculino", "Feminino" }));
+        cbbModaliProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
         javax.swing.GroupLayout pnlItensProdLayout = new javax.swing.GroupLayout(pnlItensProd);
         pnlItensProd.setLayout(pnlItensProdLayout);
@@ -167,9 +165,7 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
                             .addGroup(pnlItensProdLayout.createSequentialGroup()
                                 .addComponent(lblModalidade)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdbModalidadeMasc)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdbModalidadeFem))
+                                .addComponent(cbbModaliProd, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlItensProdLayout.createSequentialGroup()
                                 .addComponent(lblMarcaProd)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -179,19 +175,19 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cbbCorProd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
+                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlItensProdLayout.createSequentialGroup()
                                 .addComponent(lblIModeloProd)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtModeloProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblTamanProd)
-                                    .addComponent(lblQuantProdVend))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlItensProdLayout.createSequentialGroup()
+                                .addComponent(lblQuantProdVend)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtPrecoProd)
-                                    .addComponent(cbbTamanhoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtPrecoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlItensProdLayout.createSequentialGroup()
+                                .addComponent(lblTamanProd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cbbTamanhoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(pnlItensProdLayout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(lblIdProd)
@@ -209,13 +205,8 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
                     .addComponent(txtIdProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlItensProdLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCorProd)
-                            .addComponent(cbbCorProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlItensProdLayout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlItensProdLayout.createSequentialGroup()
                                 .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblIModeloProd)
@@ -225,20 +216,23 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
                                     .addComponent(txtPrecoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblQuantProdVend)))
                             .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(lblTamanProd)
-                                    .addComponent(cbbTamanhoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
                                 .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblMarcaProd)
                                     .addComponent(txtMarcaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(38, 38, 38)
+                                .addGap(39, 39, 39)
                                 .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblModalidade)
-                                    .addComponent(rdbModalidadeMasc)
-                                    .addComponent(rdbModalidadeFem))))))
-                .addContainerGap())
+                                    .addComponent(cbbModaliProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(61, 61, 61))
+                    .addGroup(pnlItensProdLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCorProd)
+                            .addComponent(cbbCorProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblTamanProd)
+                                .addComponent(cbbTamanhoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout pnlInfoCadasProdutosLayout = new javax.swing.GroupLayout(pnlInfoCadasProdutos);
@@ -327,14 +321,26 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        Validador validacao = new Validador();
+        
+        validacao.ValidarTextos(txtMarcaProd);
+        validacao.ValidarTextos(txtModeloProd);
+        validacao.ValidarComboBox(cbbModaliProd);
+        validacao.ValidarDouble(txtPrecoProd);
+        validacao.ValidarComboBox(cbbTamanhoProd);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha os campos em vermelho corretamente");
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        txtMarcaProd.setText("");txtMarcaProd.setBackground(Color.WHITE);
+        txtModeloProd.setText("");txtModeloProd.setBackground(Color.WHITE);
+        cbbModaliProd.setSelectedIndex(0);cbbModaliProd.setBackground(Color.WHITE);
+        txtPrecoProd.setText("");txtPrecoProd.setBackground(Color.WHITE);
+        cbbTamanhoProd.setSelectedIndex(0);cbbTamanhoProd.setBackground(Color.WHITE);
     }//GEN-LAST:event_btnLimparActionPerformed
-
-    private void rdbModalidadeFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbModalidadeFemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdbModalidadeFemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,6 +383,7 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cbbCorProd;
+    private javax.swing.JComboBox<String> cbbModaliProd;
     private javax.swing.JComboBox<String> cbbTamanhoProd;
     private javax.swing.JLabel lblCorProd;
     private javax.swing.JLabel lblIModeloProd;
@@ -390,8 +397,6 @@ public class TelaCadastroProdutosView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlItensProd;
     private javax.swing.JPanel pnlPrincipalCadasProdutos;
     private javax.swing.JPanel pnlTituloCadasProdutos;
-    private javax.swing.JRadioButton rdbModalidadeFem;
-    private javax.swing.JRadioButton rdbModalidadeMasc;
     private javax.swing.JTextField txtIdProd;
     private javax.swing.JTextField txtMarcaProd;
     private javax.swing.JTextField txtModeloProd;

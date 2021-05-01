@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import utils.Validador;
 
 /**
  *
@@ -29,82 +30,81 @@ public class TelaAlteExclProdutosView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btgSexoCliente = new javax.swing.ButtonGroup();
-        pnlPrincipalAltExcClientes = new javax.swing.JPanel();
-        pnlTituloAltExcClientes = new javax.swing.JPanel();
-        lblTituloAltExcClientes = new javax.swing.JLabel();
-        btnAlterarClientes = new javax.swing.JButton();
-        btnExcluirClientes = new javax.swing.JButton();
+        pnlPrincipalAltExcProdut = new javax.swing.JPanel();
+        pnlTituloAltExcProdutos = new javax.swing.JPanel();
+        lblTituloAltExcProdutos = new javax.swing.JLabel();
+        btnAlterarProdutos = new javax.swing.JButton();
+        btnExcluirProdut = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblAltExcClientes = new javax.swing.JTable();
-        lblInfoAltExcClientes = new javax.swing.JLabel();
+        tblAltExcProdutos = new javax.swing.JTable();
+        lblInfoAltExcProdutos = new javax.swing.JLabel();
         pnlItensProd = new javax.swing.JPanel();
-        txtMarcaProd = new javax.swing.JTextField();
         lblTamanProd = new javax.swing.JLabel();
-        cbbCorProd = new javax.swing.JComboBox<>();
-        rdbModalidadeMasc = new javax.swing.JRadioButton();
         lblModalidade = new javax.swing.JLabel();
         txtPrecoProd = new javax.swing.JTextField();
         lblCorProd = new javax.swing.JLabel();
-        txtIdProd = new javax.swing.JTextField();
         lblIModeloProd = new javax.swing.JLabel();
-        rdbModalidadeFem = new javax.swing.JRadioButton();
         lblQuantProdVend = new javax.swing.JLabel();
-        lblIdProd = new javax.swing.JLabel();
         lblMarcaProd = new javax.swing.JLabel();
-        cbbTamanhoProd = new javax.swing.JComboBox<>();
-        txtModeloProd = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        txtIdConsCli = new javax.swing.JTextField();
-        lblNomeConsCli = new javax.swing.JLabel();
-        txtNomeConsCli = new javax.swing.JTextField();
-        btnConsutarClientes = new javax.swing.JButton();
-        lblIdConsCli = new javax.swing.JLabel();
+        lblMarcaProdAt = new javax.swing.JLabel();
+        lblModalidProdAt = new javax.swing.JLabel();
+        lblCorProdAt = new javax.swing.JLabel();
+        lblTamanProdAt1 = new javax.swing.JLabel();
+        lblTamanProdAt2 = new javax.swing.JLabel();
+        pnlConsultaProd = new javax.swing.JPanel();
+        lblIdConsProd = new javax.swing.JLabel();
+        txtIdConsProd = new javax.swing.JTextField();
+        btnConsutarProdutos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Alteração e Exclusão de Clientes");
         setAlwaysOnTop(true);
 
-        pnlPrincipalAltExcClientes.setBackground(new java.awt.Color(0, 0, 0));
-        pnlPrincipalAltExcClientes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pnlPrincipalAltExcProdut.setBackground(new java.awt.Color(0, 0, 0));
+        pnlPrincipalAltExcProdut.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        pnlTituloAltExcClientes.setBackground(new java.awt.Color(204, 255, 204));
+        pnlTituloAltExcProdutos.setBackground(new java.awt.Color(204, 255, 204));
 
-        lblTituloAltExcClientes.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        lblTituloAltExcClientes.setForeground(new java.awt.Color(0, 0, 0));
-        lblTituloAltExcClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTituloAltExcClientes.setText("Alteração e Exclusão de Produtos");
+        lblTituloAltExcProdutos.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        lblTituloAltExcProdutos.setForeground(new java.awt.Color(0, 0, 0));
+        lblTituloAltExcProdutos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloAltExcProdutos.setText("Alteração e Exclusão de Produtos");
 
-        javax.swing.GroupLayout pnlTituloAltExcClientesLayout = new javax.swing.GroupLayout(pnlTituloAltExcClientes);
-        pnlTituloAltExcClientes.setLayout(pnlTituloAltExcClientesLayout);
-        pnlTituloAltExcClientesLayout.setHorizontalGroup(
-            pnlTituloAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTituloAltExcClientesLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlTituloAltExcProdutosLayout = new javax.swing.GroupLayout(pnlTituloAltExcProdutos);
+        pnlTituloAltExcProdutos.setLayout(pnlTituloAltExcProdutosLayout);
+        pnlTituloAltExcProdutosLayout.setHorizontalGroup(
+            pnlTituloAltExcProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTituloAltExcProdutosLayout.createSequentialGroup()
                 .addContainerGap(222, Short.MAX_VALUE)
-                .addComponent(lblTituloAltExcClientes)
+                .addComponent(lblTituloAltExcProdutos)
                 .addGap(201, 201, 201))
         );
-        pnlTituloAltExcClientesLayout.setVerticalGroup(
-            pnlTituloAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTituloAltExcClientesLayout.createSequentialGroup()
+        pnlTituloAltExcProdutosLayout.setVerticalGroup(
+            pnlTituloAltExcProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTituloAltExcProdutosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTituloAltExcClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTituloAltExcProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btnAlterarClientes.setBackground(new java.awt.Color(204, 255, 204));
-        btnAlterarClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        btnAlterarClientes.setForeground(new java.awt.Color(0, 0, 0));
-        btnAlterarClientes.setText("Alterar");
+        btnAlterarProdutos.setBackground(new java.awt.Color(204, 255, 204));
+        btnAlterarProdutos.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        btnAlterarProdutos.setForeground(new java.awt.Color(0, 0, 0));
+        btnAlterarProdutos.setText("Alterar");
+        btnAlterarProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarProdutosActionPerformed(evt);
+            }
+        });
 
-        btnExcluirClientes.setBackground(new java.awt.Color(204, 255, 204));
-        btnExcluirClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        btnExcluirClientes.setForeground(new java.awt.Color(0, 0, 0));
-        btnExcluirClientes.setText("Excluir");
+        btnExcluirProdut.setBackground(new java.awt.Color(204, 255, 204));
+        btnExcluirProdut.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        btnExcluirProdut.setForeground(new java.awt.Color(0, 0, 0));
+        btnExcluirProdut.setText("Excluir");
 
-        tblAltExcClientes.setBackground(new java.awt.Color(0, 0, 0));
-        tblAltExcClientes.setForeground(new java.awt.Color(204, 255, 204));
-        tblAltExcClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tblAltExcProdutos.setBackground(new java.awt.Color(0, 0, 0));
+        tblAltExcProdutos.setForeground(new java.awt.Color(204, 255, 204));
+        tblAltExcProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -125,84 +125,69 @@ public class TelaAlteExclProdutosView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblAltExcClientes.setToolTipText("");
-        tblAltExcClientes.setGridColor(new java.awt.Color(102, 102, 102));
-        jScrollPane1.setViewportView(tblAltExcClientes);
+        tblAltExcProdutos.setToolTipText("");
+        tblAltExcProdutos.setGridColor(new java.awt.Color(102, 102, 102));
+        jScrollPane1.setViewportView(tblAltExcProdutos);
 
-        lblInfoAltExcClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
-        lblInfoAltExcClientes.setForeground(new java.awt.Color(204, 255, 204));
-        lblInfoAltExcClientes.setText("Informe o ID ou a marca do produto para consulta");
+        lblInfoAltExcProdutos.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
+        lblInfoAltExcProdutos.setForeground(new java.awt.Color(204, 255, 204));
+        lblInfoAltExcProdutos.setText("Informe o ID do produto para consulta");
 
         pnlItensProd.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtMarcaProd.setBackground(new java.awt.Color(204, 255, 204));
-        txtMarcaProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtMarcaProd.setForeground(new java.awt.Color(0, 0, 0));
-        txtMarcaProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        lblTamanProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblTamanProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblTamanProd.setForeground(new java.awt.Color(204, 255, 204));
         lblTamanProd.setText("Tamanho:");
 
-        cbbCorProd.setBackground(new java.awt.Color(204, 255, 204));
-        cbbCorProd.setForeground(new java.awt.Color(0, 0, 0));
-        cbbCorProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "Vermelho", "Azul", "Preto", "Amarelo", "Laranja", "Verde", "Rosa", "Roxo", "Marrom", "Outros..." }));
-
-        rdbModalidadeMasc.setBackground(new java.awt.Color(0, 0, 0));
-        rdbModalidadeMasc.setForeground(new java.awt.Color(204, 255, 204));
-        rdbModalidadeMasc.setText("Masculino");
-
-        lblModalidade.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblModalidade.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblModalidade.setForeground(new java.awt.Color(204, 255, 204));
         lblModalidade.setText("Modalidade:");
 
-        txtPrecoProd.setBackground(new java.awt.Color(204, 255, 204));
+        txtPrecoProd.setBackground(new java.awt.Color(255, 255, 255));
         txtPrecoProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtPrecoProd.setForeground(new java.awt.Color(0, 0, 0));
         txtPrecoProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
-        lblCorProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblCorProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblCorProd.setForeground(new java.awt.Color(204, 255, 204));
         lblCorProd.setText("Cor:");
 
-        txtIdProd.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtIdProd.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        lblIModeloProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblIModeloProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblIModeloProd.setForeground(new java.awt.Color(204, 255, 204));
         lblIModeloProd.setText("Modelo:");
 
-        rdbModalidadeFem.setBackground(new java.awt.Color(0, 0, 0));
-        rdbModalidadeFem.setForeground(new java.awt.Color(204, 255, 204));
-        rdbModalidadeFem.setText("Feminino");
-        rdbModalidadeFem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rdbModalidadeFemActionPerformed(evt);
-            }
-        });
-
-        lblQuantProdVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblQuantProdVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblQuantProdVend.setForeground(new java.awt.Color(204, 255, 204));
         lblQuantProdVend.setText("Preço:");
 
-        lblIdProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        lblIdProd.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdProd.setText("ID Produto:");
-
-        lblMarcaProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblMarcaProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblMarcaProd.setForeground(new java.awt.Color(204, 255, 204));
         lblMarcaProd.setText("Marca:");
 
-        cbbTamanhoProd.setBackground(new java.awt.Color(204, 255, 204));
-        cbbTamanhoProd.setForeground(new java.awt.Color(0, 0, 0));
-        cbbTamanhoProd.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione...", "33/34", "34/35", "35/36", "36/37", "37/38", "38/39", "39/40", "40/41", "41/42", "42/43", "43/44" }));
+        lblMarcaProdAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblMarcaProdAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblMarcaProdAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMarcaProdAt.setText("_______");
 
-        txtModeloProd.setBackground(new java.awt.Color(204, 255, 204));
-        txtModeloProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtModeloProd.setForeground(new java.awt.Color(0, 0, 0));
-        txtModeloProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        lblModalidProdAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblModalidProdAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblModalidProdAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblModalidProdAt.setText("_______");
+
+        lblCorProdAt.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblCorProdAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblCorProdAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCorProdAt.setText("_______");
+
+        lblTamanProdAt1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblTamanProdAt1.setForeground(new java.awt.Color(204, 255, 204));
+        lblTamanProdAt1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTamanProdAt1.setText("_______");
+
+        lblTamanProdAt2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblTamanProdAt2.setForeground(new java.awt.Color(204, 255, 204));
+        lblTamanProdAt2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTamanProdAt2.setText("_______");
 
         javax.swing.GroupLayout pnlItensProdLayout = new javax.swing.GroupLayout(pnlItensProd);
         pnlItensProd.setLayout(pnlItensProdLayout);
@@ -210,224 +195,194 @@ public class TelaAlteExclProdutosView extends javax.swing.JFrame {
             pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlItensProdLayout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlItensProdLayout.createSequentialGroup()
+                        .addComponent(lblModalidade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblModalidProdAt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149))
+                    .addGroup(pnlItensProdLayout.createSequentialGroup()
+                        .addComponent(lblMarcaProd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblMarcaProdAt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(152, 152, 152))
+                    .addGroup(pnlItensProdLayout.createSequentialGroup()
+                        .addComponent(lblCorProd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCorProdAt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(151, 151, 151)))
+                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblIModeloProd)
+                    .addComponent(lblTamanProd)
+                    .addComponent(lblQuantProdVend))
                 .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlItensProdLayout.createSequentialGroup()
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addComponent(lblModalidade)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdbModalidadeMasc)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdbModalidadeFem))
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addComponent(lblMarcaProd)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMarcaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addComponent(lblCorProd)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbbCorProd, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(94, 94, 94)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addComponent(lblIModeloProd)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtModeloProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(pnlItensProdLayout.createSequentialGroup()
-                                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblTamanProd)
-                                    .addComponent(lblQuantProdVend))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtPrecoProd)
-                                    .addComponent(cbbTamanhoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(22, 22, 22)
+                        .addComponent(lblTamanProdAt1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlItensProdLayout.createSequentialGroup()
-                        .addGap(193, 193, 193)
-                        .addComponent(lblIdProd)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtIdProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTamanProdAt2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPrecoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         pnlItensProdLayout.setVerticalGroup(
             pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlItensProdLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
                 .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdProd)
-                    .addComponent(txtIdProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlItensProdLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblMarcaProd)
-                            .addComponent(txtMarcaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIModeloProd)
-                            .addComponent(txtModeloProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblModalidade)
-                            .addComponent(txtPrecoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblQuantProdVend)
-                            .addComponent(rdbModalidadeMasc)
-                            .addComponent(rdbModalidadeFem))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlItensProdLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTamanProd)
-                            .addComponent(lblCorProd)
-                            .addComponent(cbbCorProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbbTamanhoProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                    .addComponent(lblMarcaProd)
+                    .addComponent(lblIModeloProd)
+                    .addComponent(lblMarcaProdAt)
+                    .addComponent(lblTamanProdAt2))
+                .addGap(40, 40, 40)
+                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblModalidade)
+                    .addComponent(txtPrecoProd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblQuantProdVend)
+                    .addComponent(lblModalidProdAt))
+                .addGap(35, 35, 35)
+                .addGroup(pnlItensProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTamanProd)
+                    .addComponent(lblCorProd)
+                    .addComponent(lblCorProdAt)
+                    .addComponent(lblTamanProdAt1))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        pnlConsultaProd.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtIdConsCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdConsCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtIdConsCli.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdConsCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        lblIdConsProd.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        lblIdConsProd.setForeground(new java.awt.Color(204, 255, 204));
+        lblIdConsProd.setText("ID:");
 
-        lblNomeConsCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        lblNomeConsCli.setForeground(new java.awt.Color(204, 255, 204));
-        lblNomeConsCli.setText("Marca:");
+        txtIdConsProd.setBackground(new java.awt.Color(255, 255, 255));
+        txtIdConsProd.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtIdConsProd.setForeground(new java.awt.Color(0, 0, 0));
+        txtIdConsProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
-        txtNomeConsCli.setBackground(new java.awt.Color(204, 255, 204));
-        txtNomeConsCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtNomeConsCli.setForeground(new java.awt.Color(0, 0, 0));
-        txtNomeConsCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        btnConsutarClientes.setBackground(new java.awt.Color(204, 255, 204));
-        btnConsutarClientes.setForeground(new java.awt.Color(0, 0, 0));
-        btnConsutarClientes.setText("Consultar");
-        btnConsutarClientes.addActionListener(new java.awt.event.ActionListener() {
+        btnConsutarProdutos.setBackground(new java.awt.Color(204, 255, 204));
+        btnConsutarProdutos.setForeground(new java.awt.Color(0, 0, 0));
+        btnConsutarProdutos.setText("Consultar");
+        btnConsutarProdutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsutarClientesActionPerformed(evt);
+                btnConsutarProdutosActionPerformed(evt);
             }
         });
 
-        lblIdConsCli.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        lblIdConsCli.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdConsCli.setText("ID:");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIdConsCli)
+        javax.swing.GroupLayout pnlConsultaProdLayout = new javax.swing.GroupLayout(pnlConsultaProd);
+        pnlConsultaProd.setLayout(pnlConsultaProdLayout);
+        pnlConsultaProdLayout.setHorizontalGroup(
+            pnlConsultaProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlConsultaProdLayout.createSequentialGroup()
+                .addGap(241, 241, 241)
+                .addComponent(lblIdConsProd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(174, 174, 174)
-                .addComponent(lblNomeConsCli)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnConsutarClientes)
-                .addContainerGap())
+                .addComponent(txtIdConsProd, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138)
+                .addComponent(btnConsutarProdutos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlConsultaProdLayout.setVerticalGroup(
+            pnlConsultaProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlConsultaProdLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdConsCli)
-                    .addComponent(txtIdConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNomeConsCli)
-                    .addComponent(txtNomeConsCli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsutarClientes))
+                .addGroup(pnlConsultaProdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIdConsProd)
+                    .addComponent(txtIdConsProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsutarProdutos))
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnConsutarClientes, txtIdConsCli, txtNomeConsCli});
+        pnlConsultaProdLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnConsutarProdutos, txtIdConsProd});
 
-        javax.swing.GroupLayout pnlPrincipalAltExcClientesLayout = new javax.swing.GroupLayout(pnlPrincipalAltExcClientes);
-        pnlPrincipalAltExcClientes.setLayout(pnlPrincipalAltExcClientesLayout);
-        pnlPrincipalAltExcClientesLayout.setHorizontalGroup(
-            pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlTituloAltExcClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                        .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                                .addGap(250, 250, 250)
-                                .addComponent(btnAlterarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(113, 113, 113)
-                                .addComponent(btnExcluirClientes))
-                            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                                .addGap(277, 277, 277)
-                                .addComponent(lblInfoAltExcClientes)))
+        javax.swing.GroupLayout pnlPrincipalAltExcProdutLayout = new javax.swing.GroupLayout(pnlPrincipalAltExcProdut);
+        pnlPrincipalAltExcProdut.setLayout(pnlPrincipalAltExcProdutLayout);
+        pnlPrincipalAltExcProdutLayout.setHorizontalGroup(
+            pnlPrincipalAltExcProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlTituloAltExcProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlPrincipalAltExcProdutLayout.createSequentialGroup()
+                .addGroup(pnlPrincipalAltExcProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPrincipalAltExcProdutLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(btnAlterarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113)
+                        .addComponent(btnExcluirProdut)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
+                    .addGroup(pnlPrincipalAltExcProdutLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlPrincipalAltExcProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(16, 16, 16)))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalAltExcProdutLayout.createSequentialGroup()
+                                .addComponent(pnlConsultaProd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(16, 16, 16))))
+                    .addGroup(pnlPrincipalAltExcProdutLayout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(pnlItensProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                .addGap(157, 157, 157)
-                .addComponent(pnlItensProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(pnlPrincipalAltExcProdutLayout.createSequentialGroup()
+                .addGap(336, 336, 336)
+                .addComponent(lblInfoAltExcProdutos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlPrincipalAltExcClientesLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAlterarClientes, btnExcluirClientes});
+        pnlPrincipalAltExcProdutLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnAlterarProdutos, btnExcluirProdut});
 
-        pnlPrincipalAltExcClientesLayout.setVerticalGroup(
-            pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPrincipalAltExcClientesLayout.createSequentialGroup()
-                .addComponent(pnlTituloAltExcClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        pnlPrincipalAltExcProdutLayout.setVerticalGroup(
+            pnlPrincipalAltExcProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalAltExcProdutLayout.createSequentialGroup()
+                .addComponent(pnlTituloAltExcProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(lblInfoAltExcClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblInfoAltExcProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlConsultaProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(pnlItensProd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(pnlPrincipalAltExcClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAlterarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExcluirClientes))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(pnlPrincipalAltExcProdutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAlterarProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcluirProdut))
                 .addGap(35, 35, 35))
         );
 
-        pnlPrincipalAltExcClientesLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlterarClientes, btnExcluirClientes});
+        pnlPrincipalAltExcProdutLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnAlterarProdutos, btnExcluirProdut});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipalAltExcClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlPrincipalAltExcProdut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipalAltExcClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlPrincipalAltExcProdut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnConsutarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsutarClientesActionPerformed
-        if(txtIdConsCli.getText().trim().equals("") || txtNomeConsCli.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this, "Informe um dos parametros para cosulta");
+    private void btnConsutarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsutarProdutosActionPerformed
+        Validador validacao = new Validador();
+        
+        validacao.ValidarNumero(txtIdConsProd);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha corretamento os campos em vermelho");
         }
-        else{
-            if(txtIdConsCli.getText().trim().equals("")){
-                String nomeCliConsul = txtNomeConsCli.getText();
-            }
-            else{
-                int idCliCons = Integer.parseInt(txtNomeConsCli.getText());
-            }
-        }
-    }//GEN-LAST:event_btnConsutarClientesActionPerformed
+    }//GEN-LAST:event_btnConsutarProdutosActionPerformed
 
-    private void rdbModalidadeFemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbModalidadeFemActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rdbModalidadeFemActionPerformed
+    private void btnAlterarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarProdutosActionPerformed
+        Validador validacao = new Validador();
+        
+        validacao.ValidarDouble(txtPrecoProd);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha o campo que desseja alterar");
+        }
+    }//GEN-LAST:event_btnAlterarProdutosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -472,36 +427,30 @@ public class TelaAlteExclProdutosView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup btgSexoCliente;
-    private javax.swing.JButton btnAlterarClientes;
-    private javax.swing.JButton btnConsutarClientes;
-    private javax.swing.JButton btnExcluirClientes;
-    private javax.swing.JComboBox<String> cbbCorProd;
-    private javax.swing.JComboBox<String> cbbTamanhoProd;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton btnAlterarProdutos;
+    private javax.swing.JButton btnConsutarProdutos;
+    private javax.swing.JButton btnExcluirProdut;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCorProd;
+    private javax.swing.JLabel lblCorProdAt;
     private javax.swing.JLabel lblIModeloProd;
-    private javax.swing.JLabel lblIdConsCli;
-    private javax.swing.JLabel lblIdProd;
-    private javax.swing.JLabel lblInfoAltExcClientes;
+    private javax.swing.JLabel lblIdConsProd;
+    private javax.swing.JLabel lblInfoAltExcProdutos;
     private javax.swing.JLabel lblMarcaProd;
+    private javax.swing.JLabel lblMarcaProdAt;
+    private javax.swing.JLabel lblModalidProdAt;
     private javax.swing.JLabel lblModalidade;
-    private javax.swing.JLabel lblNomeConsCli;
     private javax.swing.JLabel lblQuantProdVend;
     private javax.swing.JLabel lblTamanProd;
-    private javax.swing.JLabel lblTituloAltExcClientes;
+    private javax.swing.JLabel lblTamanProdAt1;
+    private javax.swing.JLabel lblTamanProdAt2;
+    private javax.swing.JLabel lblTituloAltExcProdutos;
+    private javax.swing.JPanel pnlConsultaProd;
     private javax.swing.JPanel pnlItensProd;
-    private javax.swing.JPanel pnlPrincipalAltExcClientes;
-    private javax.swing.JPanel pnlTituloAltExcClientes;
-    private javax.swing.JRadioButton rdbModalidadeFem;
-    private javax.swing.JRadioButton rdbModalidadeMasc;
-    private javax.swing.JTable tblAltExcClientes;
-    private javax.swing.JTextField txtIdConsCli;
-    private javax.swing.JTextField txtIdProd;
-    private javax.swing.JTextField txtMarcaProd;
-    private javax.swing.JTextField txtModeloProd;
-    private javax.swing.JTextField txtNomeConsCli;
+    private javax.swing.JPanel pnlPrincipalAltExcProdut;
+    private javax.swing.JPanel pnlTituloAltExcProdutos;
+    private javax.swing.JTable tblAltExcProdutos;
+    private javax.swing.JTextField txtIdConsProd;
     private javax.swing.JTextField txtPrecoProd;
     // End of variables declaration//GEN-END:variables
 }

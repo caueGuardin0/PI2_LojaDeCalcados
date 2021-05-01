@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import utils.Validador;
 
 /**
  *
@@ -34,7 +35,6 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblTituloCadasVendas = new javax.swing.JLabel();
         pnlInfoCadasVendas = new javax.swing.JPanel();
         lblIdVend = new javax.swing.JLabel();
-        txtValorUniVend = new javax.swing.JTextField();
         lblIdProdVend = new javax.swing.JLabel();
         lblCpfCliVend = new javax.swing.JLabel();
         lblDataVend = new javax.swing.JLabel();
@@ -48,14 +48,15 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblQuantProdVend = new javax.swing.JLabel();
         txtQuantiadeProdVend = new javax.swing.JTextField();
         lblValorTotVend = new javax.swing.JLabel();
-        txtValorTotalVend = new javax.swing.JTextField();
-        btnSalvar1 = new javax.swing.JButton();
-        btnSalvar2 = new javax.swing.JButton();
-        btnLimpar = new javax.swing.JButton();
-        btnSalvar = new javax.swing.JButton();
-        pnlIntesSacola = new javax.swing.JPanel();
+        btnAdicionarItens = new javax.swing.JButton();
+        btnExcluirItes = new javax.swing.JButton();
+        btnLimparItens = new javax.swing.JButton();
+        lblValorUniProdVendAt = new javax.swing.JLabel();
+        lblValorTotProdVendAt = new javax.swing.JLabel();
+        btnFinalizaCompra = new javax.swing.JButton();
+        pnlItesSacola = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblItensVend = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Cadastro de Venda");
@@ -93,11 +94,6 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblIdVend.setForeground(new java.awt.Color(204, 255, 204));
         lblIdVend.setText("ID Venda:");
 
-        txtValorUniVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtValorUniVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtValorUniVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtValorUniVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
         lblIdProdVend.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblIdProdVend.setForeground(new java.awt.Color(204, 255, 204));
         lblIdProdVend.setText("*ID Produto:");
@@ -110,7 +106,7 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblDataVend.setForeground(new java.awt.Color(204, 255, 204));
         lblDataVend.setText("*Data:");
 
-        txtDataVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtDataVend.setBackground(new java.awt.Color(255, 255, 255));
         txtDataVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtDataVend.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -124,12 +120,12 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblValorUniVend.setForeground(new java.awt.Color(204, 255, 204));
         lblValorUniVend.setText("Valor unitário:");
 
-        txtIdVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtIdVend.setBackground(new java.awt.Color(255, 255, 255));
         txtIdVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtIdVend.setForeground(new java.awt.Color(0, 0, 0));
         txtIdVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
-        txtIdProdVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtIdProdVend.setBackground(new java.awt.Color(255, 255, 255));
         txtIdProdVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtIdProdVend.setForeground(new java.awt.Color(0, 0, 0));
         txtIdProdVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -138,12 +134,12 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblIdCliVend.setForeground(new java.awt.Color(204, 255, 204));
         lblIdCliVend.setText("*ID Cliente:");
 
-        txtIdCienteVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtIdCienteVend.setBackground(new java.awt.Color(255, 255, 255));
         txtIdCienteVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtIdCienteVend.setForeground(new java.awt.Color(0, 0, 0));
         txtIdCienteVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
-        txtCpfCliVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtCpfCliVend.setBackground(new java.awt.Color(255, 255, 255));
         txtCpfCliVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtCpfCliVend.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -157,7 +153,7 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblQuantProdVend.setForeground(new java.awt.Color(204, 255, 204));
         lblQuantProdVend.setText("*Quantidade Produto:");
 
-        txtQuantiadeProdVend.setBackground(new java.awt.Color(204, 255, 204));
+        txtQuantiadeProdVend.setBackground(new java.awt.Color(255, 255, 255));
         txtQuantiadeProdVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtQuantiadeProdVend.setForeground(new java.awt.Color(0, 0, 0));
         txtQuantiadeProdVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
@@ -166,40 +162,43 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         lblValorTotVend.setForeground(new java.awt.Color(204, 255, 204));
         lblValorTotVend.setText("Valor Total:");
 
-        txtValorTotalVend.setBackground(new java.awt.Color(204, 255, 204));
-        txtValorTotalVend.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtValorTotalVend.setForeground(new java.awt.Color(0, 0, 0));
-        txtValorTotalVend.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        btnSalvar1.setBackground(new java.awt.Color(204, 255, 204));
-        btnSalvar1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        btnSalvar1.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar1.setText("Adicionar Item");
-        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+        btnAdicionarItens.setBackground(new java.awt.Color(204, 255, 204));
+        btnAdicionarItens.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        btnAdicionarItens.setForeground(new java.awt.Color(0, 0, 0));
+        btnAdicionarItens.setText("Adicionar Item");
+        btnAdicionarItens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvar1ActionPerformed(evt);
+                btnAdicionarItensActionPerformed(evt);
             }
         });
 
-        btnSalvar2.setBackground(new java.awt.Color(204, 255, 204));
-        btnSalvar2.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        btnSalvar2.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar2.setText("Excluir Item");
-        btnSalvar2.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluirItes.setBackground(new java.awt.Color(204, 255, 204));
+        btnExcluirItes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        btnExcluirItes.setForeground(new java.awt.Color(0, 0, 0));
+        btnExcluirItes.setText("Excluir Item");
+        btnExcluirItes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvar2ActionPerformed(evt);
+                btnExcluirItesActionPerformed(evt);
             }
         });
 
-        btnLimpar.setBackground(new java.awt.Color(204, 255, 204));
-        btnLimpar.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        btnLimpar.setForeground(new java.awt.Color(0, 0, 0));
-        btnLimpar.setText("Limpar");
-        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparItens.setBackground(new java.awt.Color(204, 255, 204));
+        btnLimparItens.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        btnLimparItens.setForeground(new java.awt.Color(0, 0, 0));
+        btnLimparItens.setText("Limpar");
+        btnLimparItens.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimparActionPerformed(evt);
+                btnLimparItensActionPerformed(evt);
             }
         });
+
+        lblValorUniProdVendAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblValorUniProdVendAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValorUniProdVendAt.setText("___________________");
+
+        lblValorTotProdVendAt.setForeground(new java.awt.Color(204, 255, 204));
+        lblValorTotProdVendAt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValorTotProdVendAt.setText("___________________");
 
         javax.swing.GroupLayout pnlInfoCadasVendasLayout = new javax.swing.GroupLayout(pnlInfoCadasVendas);
         pnlInfoCadasVendas.setLayout(pnlInfoCadasVendasLayout);
@@ -225,7 +224,7 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
                                 .addComponent(lblDataVend)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnSalvar1)
+                                    .addComponent(btnAdicionarItens)
                                     .addComponent(txtDataVend, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(174, 174, 174)
                         .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -240,7 +239,7 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtQuantiadeProdVend, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                                    .addComponent(txtValorUniVend)))))
+                                    .addComponent(lblValorUniProdVendAt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                     .addGroup(pnlInfoCadasVendasLayout.createSequentialGroup()
                         .addGap(345, 345, 345)
                         .addComponent(lblIdVend)
@@ -252,11 +251,11 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlInfoCadasVendasLayout.createSequentialGroup()
-                                .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnLimparItens, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(94, 94, 94)
-                                .addComponent(btnSalvar2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtValorTotalVend, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnExcluirItes, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblValorTotProdVendAt))))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         pnlInfoCadasVendasLayout.setVerticalGroup(
             pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,76 +276,76 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
                     .addComponent(txtCpfCliVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtQuantiadeProdVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblQuantProdVend))
-                .addGap(26, 26, 26)
-                .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtValorUniVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblValorUniVend)
-                    .addComponent(lblDataVend)
-                    .addComponent(txtDataVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnlInfoCadasVendasLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
+                        .addGap(136, 136, 136)
                         .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtValorTotalVend, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblValorTotVend))
-                        .addContainerGap(80, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlInfoCadasVendasLayout.createSequentialGroup()
+                            .addComponent(lblValorTotVend)
+                            .addComponent(lblValorTotProdVendAt))
+                        .addContainerGap(83, Short.MAX_VALUE))
+                    .addGroup(pnlInfoCadasVendasLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDataVend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDataVend)
+                            .addComponent(lblValorUniVend)
+                            .addComponent(lblValorUniProdVendAt))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(pnlInfoCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSalvar1)
-                            .addComponent(btnLimpar)
-                            .addComponent(btnSalvar2))
+                            .addComponent(btnAdicionarItens)
+                            .addComponent(btnLimparItens)
+                            .addComponent(btnExcluirItes))
                         .addContainerGap())))
         );
 
-        pnlInfoCadasVendasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtDataVend, txtValorUniVend});
+        pnlInfoCadasVendasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCpfCliVend, txtDataVend, txtIdCienteVend});
 
-        pnlInfoCadasVendasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCpfCliVend, txtIdCienteVend});
+        pnlInfoCadasVendasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblValorTotProdVendAt, lblValorUniProdVendAt, txtQuantiadeProdVend});
 
-        btnSalvar.setBackground(new java.awt.Color(204, 255, 204));
-        btnSalvar.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(0, 0, 0));
-        btnSalvar.setText("Finalizar compra");
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+        btnFinalizaCompra.setBackground(new java.awt.Color(204, 255, 204));
+        btnFinalizaCompra.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
+        btnFinalizaCompra.setForeground(new java.awt.Color(0, 0, 0));
+        btnFinalizaCompra.setText("Finalizar compra");
+        btnFinalizaCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
+                btnFinalizaCompraActionPerformed(evt);
             }
         });
 
-        pnlIntesSacola.setBackground(new java.awt.Color(0, 0, 0));
-        pnlIntesSacola.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Itens Adicionados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(204, 255, 204))); // NOI18N
-        pnlIntesSacola.setForeground(new java.awt.Color(204, 255, 204));
-        pnlIntesSacola.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        pnlIntesSacola.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        pnlItesSacola.setBackground(new java.awt.Color(0, 0, 0));
+        pnlItesSacola.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Itens Adicionados", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14), new java.awt.Color(204, 255, 204))); // NOI18N
+        pnlItesSacola.setForeground(new java.awt.Color(204, 255, 204));
+        pnlItesSacola.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlItesSacola.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jTable1.setBackground(new java.awt.Color(0, 0, 0));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblItensVend.setBackground(new java.awt.Color(0, 0, 0));
+        tblItensVend.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID Venda", "ID Cliente", "ID Produto", "CPF Cliente", "Quantidade Produto", "Data", "Valor Unitário", "Valor Total"
+                "ID Cliente", "ID Produto", "CPF Cliente", "Quantidade Produto", "Data", "Valor Unitário", "Valor Total"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(102, 102, 102));
-        jScrollPane1.setViewportView(jTable1);
+        tblItensVend.setGridColor(new java.awt.Color(102, 102, 102));
+        jScrollPane1.setViewportView(tblItensVend);
 
-        javax.swing.GroupLayout pnlIntesSacolaLayout = new javax.swing.GroupLayout(pnlIntesSacola);
-        pnlIntesSacola.setLayout(pnlIntesSacolaLayout);
-        pnlIntesSacolaLayout.setHorizontalGroup(
-            pnlIntesSacolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlIntesSacolaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlItesSacolaLayout = new javax.swing.GroupLayout(pnlItesSacola);
+        pnlItesSacola.setLayout(pnlItesSacolaLayout);
+        pnlItesSacolaLayout.setHorizontalGroup(
+            pnlItesSacolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlItesSacolaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
         );
-        pnlIntesSacolaLayout.setVerticalGroup(
-            pnlIntesSacolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlIntesSacolaLayout.createSequentialGroup()
+        pnlItesSacolaLayout.setVerticalGroup(
+            pnlItesSacolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlItesSacolaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -360,15 +359,12 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
             .addGroup(pnlPrincipalCadasVendasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlPrincipalCadasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPrincipalCadasVendasLayout.createSequentialGroup()
-                        .addComponent(pnlInfoCadasVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(pnlPrincipalCadasVendasLayout.createSequentialGroup()
-                        .addComponent(pnlIntesSacola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                    .addComponent(pnlInfoCadasVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlItesSacola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalCadasVendasLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFinalizaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(392, 392, 392))
         );
         pnlPrincipalCadasVendasLayout.setVerticalGroup(
@@ -378,9 +374,9 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlInfoCadasVendas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(pnlIntesSacola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlItesSacola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(btnFinalizaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
 
@@ -398,54 +394,36 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        if (txtIdCienteVend.getText().trim().equals("") || txtIdProdVend.getText().trim().equals("") || txtCpfCliVend.getText().trim().equals("") || txtQuantiadeProdVend.getText().trim().equals("") || txtDataVend.getText().trim().equals("")) {
-            JOptionPane.showMessageDialog(this, "Preencha os campos vazios obrigatórios!");
-        } else if (txtIdProdVend.getText().trim().equals("") || txtCpfCliVend.getText().trim().equals("") || txtQuantiadeProdVend.getText().trim().equals("") || txtDataVend.getText().trim().equals("")) {
-            int idCliVend = Integer.parseInt(txtIdCienteVend.getText());
-            JOptionPane.showMessageDialog(this, "Preencha os campos vazios obrigatórios!");
-        } else if (txtCpfCliVend.getText().trim().equals("") || txtQuantiadeProdVend.getText().trim().equals("") || txtDataVend.getText().trim().equals("")) {
-            int idProdVend = Integer.parseInt(txtIdProdVend.getText());
-            int idCliVend = Integer.parseInt(txtIdCienteVend.getText());
-            JOptionPane.showMessageDialog(this, "Preencha os campos vazios obrigatórios!");
-        } else if(txtQuantiadeProdVend.getText().trim().equals("") || txtDataVend.getText().trim().equals("")) {
-            int idProdVend = Integer.parseInt(txtIdProdVend.getText());
-            int idCliVend = Integer.parseInt(txtIdCienteVend.getText());
-            int cpfCliVend = Integer.parseInt(txtCpfCliVend.getText());
-            JOptionPane.showMessageDialog(this, "Preencha os campos vazios obrigatórios!");
-        } else if(txtDataVend.getText().trim().equals("")) {
-            int idProdVend = Integer.parseInt(txtIdProdVend.getText());
-            int idCliVend = Integer.parseInt(txtIdCienteVend.getText());
-            int cpfCliVend = Integer.parseInt(txtCpfCliVend.getText());
-            int qtdProdVend = Integer.parseInt(txtQuantiadeProdVend.getText());
-            JOptionPane.showMessageDialog(this, "Preencha os campos vazios obrigatórios!");
-        } else {
-            int idProdVend = Integer.parseInt(txtIdProdVend.getText());
-            int idCliVend = Integer.parseInt(txtIdCienteVend.getText());
-            int cpfCliVend = Integer.parseInt(txtCpfCliVend.getText());
-            int qtdProdVend = Integer.parseInt(txtQuantiadeProdVend.getText());
-            int dataVend = Integer.parseInt(txtDataVend.getText());
-            JOptionPane.showMessageDialog(this, "Venda cadastrada!");
-        }
-    }//GEN-LAST:event_btnSalvarActionPerformed
+    private void btnFinalizaCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizaCompraActionPerformed
+        
+    }//GEN-LAST:event_btnFinalizaCompraActionPerformed
 
-    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+    private void btnLimparItensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparItensActionPerformed
             txtIdCienteVend.setText("");
             txtIdProdVend.setText("");
             txtCpfCliVend.setText("");
             txtQuantiadeProdVend.setText("");
             txtDataVend.setText("");
-            txtValorUniVend.setText("");
-            txtValorTotalVend.setText("");
-    }//GEN-LAST:event_btnLimparActionPerformed
+    }//GEN-LAST:event_btnLimparItensActionPerformed
 
-    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+    private void btnAdicionarItensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarItensActionPerformed
+        Validador validacao = new Validador();
         
-    }//GEN-LAST:event_btnSalvar1ActionPerformed
+        validacao.ValidarNumero(txtIdCienteVend);
+        validacao.ValidarNumero(txtIdProdVend);
+        validacao.ValidarCpf(txtCpfCliVend);
+        validacao.ValidarNumero(txtQuantiadeProdVend);
+        validacao.ValidarData(txtDataVend);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha corretamente os campos em vermelho");
+        }
+        
+    }//GEN-LAST:event_btnAdicionarItensActionPerformed
 
-    private void btnSalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar2ActionPerformed
+    private void btnExcluirItesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirItesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnSalvar2ActionPerformed
+    }//GEN-LAST:event_btnExcluirItesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -486,12 +464,11 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLimpar;
-    private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnSalvar1;
-    private javax.swing.JButton btnSalvar2;
+    private javax.swing.JButton btnAdicionarItens;
+    private javax.swing.JButton btnExcluirItes;
+    private javax.swing.JButton btnFinalizaCompra;
+    private javax.swing.JButton btnLimparItens;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblCpfCliVend;
     private javax.swing.JLabel lblDataVend;
     private javax.swing.JLabel lblIdCliVend;
@@ -499,19 +476,20 @@ public class TelaCadastroVendaView extends javax.swing.JFrame {
     private javax.swing.JLabel lblIdVend;
     private javax.swing.JLabel lblQuantProdVend;
     private javax.swing.JLabel lblTituloCadasVendas;
+    private javax.swing.JLabel lblValorTotProdVendAt;
     private javax.swing.JLabel lblValorTotVend;
+    private javax.swing.JLabel lblValorUniProdVendAt;
     private javax.swing.JLabel lblValorUniVend;
     private javax.swing.JPanel pnlInfoCadasVendas;
-    private javax.swing.JPanel pnlIntesSacola;
+    private javax.swing.JPanel pnlItesSacola;
     private javax.swing.JPanel pnlPrincipalCadasVendas;
     private javax.swing.JPanel pnlTituloCadasVendas;
+    private javax.swing.JTable tblItensVend;
     private javax.swing.JFormattedTextField txtCpfCliVend;
     private javax.swing.JFormattedTextField txtDataVend;
     private javax.swing.JTextField txtIdCienteVend;
     private javax.swing.JTextField txtIdProdVend;
     private javax.swing.JTextField txtIdVend;
     private javax.swing.JTextField txtQuantiadeProdVend;
-    private javax.swing.JTextField txtValorTotalVend;
-    private javax.swing.JTextField txtValorUniVend;
     // End of variables declaration//GEN-END:variables
 }

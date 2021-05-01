@@ -125,6 +125,17 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuAltExcProdutoActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+B"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Estoque"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnuVenda">
@@ -702,7 +713,7 @@
                                       <Color blue="cc" green="ff" red="cc" type="rgb"/>
                                     </Property>
                                     <Property name="horizontalAlignment" type="int" value="0"/>
-                                    <Property name="text" type="java.lang.String" value="Informe o ID ou nome para consulta"/>
+                                    <Property name="text" type="java.lang.String" value="Informe o CPF para consulta"/>
                                   </Properties>
                                 </Component>
                                 <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -725,7 +736,7 @@
                                         </Property>
                                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                           <Table columnCount="13" rowCount="20">
-                                            <Column editable="true" title="ID" type="java.lang.Object"/>
+                                            <Column editable="true" title="ID Cliente" type="java.lang.Object"/>
                                             <Column editable="true" title="CPF" type="java.lang.Object"/>
                                             <Column editable="true" title="Nome" type="java.lang.Object"/>
                                             <Column editable="true" title="E-mail" type="java.lang.Object"/>
@@ -757,18 +768,14 @@
                                   <Layout>
                                     <DimensionLayout dim="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="lblIdConsultaClientes" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtIdConsultaClientes" min="-2" pref="114" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
                                               <Component id="lblNomeConsultaClientes" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtNomeConsultaClientes" max="32767" attributes="0"/>
-                                              <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
-                                              <Component id="btnConsultasClientes" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtCpfClienteConsulCli" min="-2" pref="141" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                                              <Component id="btnConsultasClientes" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
@@ -777,49 +784,16 @@
                                           <Group type="102" attributes="0">
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="lblIdConsultaClientes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="txtIdConsultaClientes" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="txtCpfClienteConsulCli" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                                                   <Component id="lblNomeConsultaClientes" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="txtNomeConsultaClientes" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                                   <Component id="btnConsultasClientes" alignment="3" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                     </DimensionLayout>
                                   </Layout>
                                   <SubComponents>
-                                    <Component class="javax.swing.JTextField" name="txtIdConsultaClientes">
-                                      <Properties>
-                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                        </Property>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                          <Font name="Microsoft Tai Le" size="12" style="1"/>
-                                        </Property>
-                                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="0" green="0" red="0" type="rgb"/>
-                                        </Property>
-                                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                            <LineBorder roundedCorners="true">
-                                              <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
-                                            </LineBorder>
-                                          </Border>
-                                        </Property>
-                                      </Properties>
-                                    </Component>
-                                    <Component class="javax.swing.JLabel" name="lblIdConsultaClientes">
-                                      <Properties>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                          <Font name="Microsoft Tai Le" size="14" style="1"/>
-                                        </Property>
-                                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                        </Property>
-                                        <Property name="text" type="java.lang.String" value="ID:"/>
-                                      </Properties>
-                                    </Component>
                                     <Component class="javax.swing.JLabel" name="lblNomeConsultaClientes">
                                       <Properties>
                                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -828,31 +802,8 @@
                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="cc" green="ff" red="cc" type="rgb"/>
                                         </Property>
-                                        <Property name="text" type="java.lang.String" value="Nome:"/>
+                                        <Property name="text" type="java.lang.String" value="CPF:"/>
                                       </Properties>
-                                    </Component>
-                                    <Component class="javax.swing.JTextField" name="txtNomeConsultaClientes">
-                                      <Properties>
-                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                        </Property>
-                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                          <Font name="Microsoft Tai Le" size="12" style="1"/>
-                                        </Property>
-                                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                          <Color blue="0" green="0" red="0" type="rgb"/>
-                                        </Property>
-                                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                            <LineBorder roundedCorners="true">
-                                              <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
-                                            </LineBorder>
-                                          </Border>
-                                        </Property>
-                                      </Properties>
-                                      <Events>
-                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeConsultaClientesActionPerformed"/>
-                                      </Events>
                                     </Component>
                                     <Component class="javax.swing.JButton" name="btnConsultasClientes">
                                       <Properties>
@@ -866,6 +817,32 @@
                                       </Properties>
                                       <Events>
                                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultasClientesActionPerformed"/>
+                                      </Events>
+                                    </Component>
+                                    <Component class="javax.swing.JFormattedTextField" name="txtCpfClienteConsulCli">
+                                      <Properties>
+                                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                        </Property>
+                                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                                          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                            <LineBorder roundedCorners="true">
+                                              <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
+                                            </LineBorder>
+                                          </Border>
+                                        </Property>
+                                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                          <Color blue="0" green="0" red="0" type="rgb"/>
+                                        </Property>
+                                        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
+                                          <Format format="###.###.###-##" subtype="-1" type="5"/>
+                                        </Property>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Dialog" size="14" style="1"/>
+                                        </Property>
+                                      </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCpfClienteConsulCliActionPerformed"/>
                                       </Events>
                                     </Component>
                                   </SubComponents>
@@ -889,7 +866,7 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
-                                              <Component id="lblTituloConsulClientes" max="32767" attributes="0"/>
+                                              <Component id="lblTituloConsulClientes" pref="242" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -1193,7 +1170,7 @@
                           <Layout>
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="947" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="963" max="32767" attributes="0"/>
                                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1290,7 +1267,7 @@
                                           <Color blue="cc" green="ff" red="cc" type="rgb"/>
                                         </Property>
                                         <Property name="horizontalAlignment" type="int" value="0"/>
-                                        <Property name="text" type="java.lang.String" value="Informe o ID ou marca para consulta"/>
+                                        <Property name="text" type="java.lang.String" value="Informe o ID do produto para consulta"/>
                                       </Properties>
                                     </Component>
                                     <Container class="javax.swing.JScrollPane" name="jScrollPane5">
@@ -1300,7 +1277,7 @@
 
                                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                                       <SubComponents>
-                                        <Component class="javax.swing.JTable" name="tblConsultaClientes1">
+                                        <Component class="javax.swing.JTable" name="tblConsultaProdutos">
                                           <Properties>
                                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -1340,17 +1317,13 @@
                                         <DimensionLayout dim="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="lblIdConsultaClientes1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="277" max="-2" attributes="0"/>
+                                                  <Component id="lblIdConsultaProd" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="txtIdConsultaClientes1" min="-2" pref="114" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                                                  <Component id="lblNomeConsultaClientes1" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                                  <Component id="txtNomeConsultaClientes1" max="32767" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
+                                                  <Component id="txtIdConsultaProd" min="-2" pref="114" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                                                   <Component id="btnConsultasClientes1" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                         </DimensionLayout>
@@ -1359,10 +1332,8 @@
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="lblIdConsultaClientes1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtIdConsultaClientes1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                                                      <Component id="lblNomeConsultaClientes1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="txtNomeConsultaClientes1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                                                      <Component id="lblIdConsultaProd" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtIdConsultaProd" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                                                       <Component id="btnConsultasClientes1" alignment="3" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
@@ -1371,10 +1342,10 @@
                                         </DimensionLayout>
                                       </Layout>
                                       <SubComponents>
-                                        <Component class="javax.swing.JTextField" name="txtIdConsultaClientes1">
+                                        <Component class="javax.swing.JTextField" name="txtIdConsultaProd">
                                           <Properties>
                                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                             </Property>
                                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                               <Font name="Microsoft Tai Le" size="12" style="1"/>
@@ -1391,7 +1362,7 @@
                                             </Property>
                                           </Properties>
                                         </Component>
-                                        <Component class="javax.swing.JLabel" name="lblIdConsultaClientes1">
+                                        <Component class="javax.swing.JLabel" name="lblIdConsultaProd">
                                           <Properties>
                                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                               <Font name="Microsoft Tai Le" size="14" style="1"/>
@@ -1401,40 +1372,6 @@
                                             </Property>
                                             <Property name="text" type="java.lang.String" value="ID:"/>
                                           </Properties>
-                                        </Component>
-                                        <Component class="javax.swing.JLabel" name="lblNomeConsultaClientes1">
-                                          <Properties>
-                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                              <Font name="Microsoft Tai Le" size="14" style="1"/>
-                                            </Property>
-                                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                            </Property>
-                                            <Property name="text" type="java.lang.String" value="Marca:"/>
-                                          </Properties>
-                                        </Component>
-                                        <Component class="javax.swing.JTextField" name="txtNomeConsultaClientes1">
-                                          <Properties>
-                                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                            </Property>
-                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                              <Font name="Microsoft Tai Le" size="12" style="1"/>
-                                            </Property>
-                                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                              <Color blue="0" green="0" red="0" type="rgb"/>
-                                            </Property>
-                                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                                <LineBorder roundedCorners="true">
-                                                  <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
-                                                </LineBorder>
-                                              </Border>
-                                            </Property>
-                                          </Properties>
-                                          <Events>
-                                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeConsultaClientes1ActionPerformed"/>
-                                          </Events>
                                         </Component>
                                         <Component class="javax.swing.JButton" name="btnConsultasClientes1">
                                           <Properties>
@@ -1508,6 +1445,67 @@
                                 </Container>
                               </SubComponents>
                             </Container>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JPanel" name="pnlEstoqueProdutos">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="0" green="0" red="0" type="rgb"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                              <JTabbedPaneConstraints tabName="Estoque">
+                                <Property name="tabTitle" type="java.lang.String" value="Estoque"/>
+                              </JTabbedPaneConstraints>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout>
+                            <DimensionLayout dim="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="951" max="32767" attributes="0"/>
+                                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="375" max="-2" attributes="0"/>
+                                          <Component id="btnGerirEstoque" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="375" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                            <DimensionLayout dim="1">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <EmptySpace min="0" pref="532" max="32767" attributes="0"/>
+                                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
+                                          <Component id="btnGerirEstoque" pref="85" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                            </DimensionLayout>
+                          </Layout>
+                          <SubComponents>
+                            <Component class="javax.swing.JButton" name="btnGerirEstoque">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                </Property>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="Microsoft Tai Le" size="14" style="1"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="0" green="0" red="0" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Gerir estoque de Produto"/>
+                                <Property name="horizontalTextPosition" type="int" value="0"/>
+                              </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerirEstoqueActionPerformed"/>
+                              </Events>
+                            </Component>
                           </SubComponents>
                         </Container>
                       </SubComponents>
@@ -1776,21 +1774,23 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="pnlTituloConsultaVendas" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="pnlTituloConsultaVendas" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Component id="lblInfoConsultaVendas" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="pnlInfoConsultaVendas" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
-                                      <Component id="lblInfoConsultaVendas" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="pnlInfoConsultaVendas" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1873,7 +1873,7 @@
                                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="Informe o ID da Venda ou CPF do Cliente para consulta"/>
+                                <Property name="text" type="java.lang.String" value="Informe o CPF do Cliente para consulta"/>
                               </Properties>
                             </Component>
                             <Container class="javax.swing.JPanel" name="pnlInfoConsultaVendas">
@@ -1887,17 +1887,13 @@
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                          <Component id="lblIdVendas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtIdVendaConsulta" min="-2" pref="137" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
                                           <Component id="lblCpfCliVendas" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="txtCpfClienteConsulta" min="-2" pref="122" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
                                           <Component id="btnConsultaVendas" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -1906,13 +1902,11 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="lblIdVendas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtIdVendaConsulta" linkSize="1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                               <Component id="lblCpfCliVendas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="txtCpfClienteConsulta" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="txtCpfClienteConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnConsultaVendas" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                 </DimensionLayout>
@@ -1921,7 +1915,7 @@
                                 <Component class="javax.swing.JFormattedTextField" name="txtCpfClienteConsulta">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
                                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -1943,37 +1937,6 @@
                                   <Events>
                                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCpfClienteConsultaActionPerformed"/>
                                   </Events>
-                                </Component>
-                                <Component class="javax.swing.JTextField" name="txtIdVendaConsulta">
-                                  <Properties>
-                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                    </Property>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Dialog" size="14" style="1"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="0" green="0" red="0" type="rgb"/>
-                                    </Property>
-                                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                        <LineBorder roundedCorners="true">
-                                          <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
-                                        </LineBorder>
-                                      </Border>
-                                    </Property>
-                                  </Properties>
-                                </Component>
-                                <Component class="javax.swing.JLabel" name="lblIdVendas">
-                                  <Properties>
-                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                      <Font name="Microsoft New Tai Lue" size="14" style="1"/>
-                                    </Property>
-                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                                    </Property>
-                                    <Property name="text" type="java.lang.String" value="ID:"/>
-                                  </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="lblCpfCliVendas">
                                   <Properties>
@@ -2118,8 +2081,8 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                              <JTabbedPaneConstraints tabName="Relat&#xf3;rio Sit&#xe9;tico">
-                                <Property name="tabTitle" type="java.lang.String" value="Relat&#xf3;rio Sit&#xe9;tico"/>
+                              <JTabbedPaneConstraints tabName="Relat&#xf3;rio Sint&#xe9;tico">
+                                <Property name="tabTitle" type="java.lang.String" value="Relat&#xf3;rio Sint&#xe9;tico"/>
                               </JTabbedPaneConstraints>
                             </Constraint>
                           </Constraints>
@@ -2404,7 +2367,7 @@
                                 <Component class="javax.swing.JFormattedTextField" name="txtDataIniRelSint">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2418,7 +2381,7 @@
                                 <Component class="javax.swing.JFormattedTextField" name="txtDataFimRelSint">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2742,7 +2705,7 @@
                                 <Component class="javax.swing.JFormattedTextField" name="txtAnaliDataIni">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="0" red="0" type="rgb"/>
@@ -2756,7 +2719,7 @@
                                 <Component class="javax.swing.JFormattedTextField" name="txtAnaliDataFim">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                      <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                     </Property>
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="0" green="0" red="0" type="rgb"/>

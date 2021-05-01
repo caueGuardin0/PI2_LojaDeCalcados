@@ -53,19 +53,14 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="pnlInfoCadasVendas" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="pnlIntesSacola" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="pnlInfoCadasVendas" alignment="0" max="32767" attributes="0"/>
+                      <Component id="pnlItesSacola" alignment="0" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnSalvar" min="-2" pref="186" max="-2" attributes="0"/>
+                  <Component id="btnFinalizaCompra" min="-2" pref="186" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -77,9 +72,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="pnlInfoCadasVendas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="pnlIntesSacola" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="31" max="32767" attributes="0"/>
-                  <Component id="btnSalvar" linkSize="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="pnlItesSacola" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <Component id="btnFinalizaCompra" min="-2" pref="48" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -162,7 +157,7 @@
                                       <Component id="lblDataVend" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnSalvar1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btnAdicionarItens" min="-2" max="-2" attributes="0"/>
                                           <Component id="txtDataVend" min="-2" pref="78" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -182,7 +177,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="txtQuantiadeProdVend" pref="137" max="32767" attributes="0"/>
-                                          <Component id="txtValorUniVend" max="32767" attributes="0"/>
+                                          <Component id="lblValorUniProdVendAt" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -199,15 +194,15 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="btnLimpar" min="-2" pref="120" max="-2" attributes="0"/>
+                                      <Component id="btnLimparItens" min="-2" pref="120" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                                      <Component id="btnSalvar2" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="btnExcluirItes" min="-2" pref="127" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="txtValorTotalVend" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="lblValorTotProdVendAt" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="154" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -230,31 +225,31 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblCpfCliVend" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtCpfCliVend" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtQuantiadeProdVend" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Component id="txtQuantiadeProdVend" linkSize="5" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="lblQuantProdVend" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtValorUniVend" linkSize="1" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                          <Component id="lblValorUniVend" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblDataVend" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtDataVend" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtValorTotalVend" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="lblValorTotVend" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblValorTotProdVendAt" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="80" max="32767" attributes="0"/>
+                              <EmptySpace pref="83" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtDataVend" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblDataVend" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblValorUniVend" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblValorUniProdVendAt" linkSize="5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnSalvar1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnLimpar" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnSalvar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAdicionarItens" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnLimparItens" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnExcluirItes" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -273,26 +268,6 @@
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ID Venda:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtValorUniVend">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true">
-                      <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblIdProdVend">
@@ -331,7 +306,7 @@
             <Component class="javax.swing.JFormattedTextField" name="txtDataVend">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -365,7 +340,7 @@
             <Component class="javax.swing.JTextField" name="txtIdVend">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -385,7 +360,7 @@
             <Component class="javax.swing.JTextField" name="txtIdProdVend">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -416,7 +391,7 @@
             <Component class="javax.swing.JTextField" name="txtIdCienteVend">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -436,7 +411,7 @@
             <Component class="javax.swing.JFormattedTextField" name="txtCpfCliVend">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -470,7 +445,7 @@
             <Component class="javax.swing.JTextField" name="txtQuantiadeProdVend">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="14" style="1"/>
@@ -498,27 +473,7 @@
                 <Property name="text" type="java.lang.String" value="Valor Total:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtValorTotalVend">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Dialog" size="14" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder roundedCorners="true">
-                      <Color PropertyName="color" blue="cc" green="ff" red="cc" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnSalvar1">
+            <Component class="javax.swing.JButton" name="btnAdicionarItens">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -532,10 +487,10 @@
                 <Property name="text" type="java.lang.String" value="Adicionar Item"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvar1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAdicionarItensActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSalvar2">
+            <Component class="javax.swing.JButton" name="btnExcluirItes">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -549,10 +504,10 @@
                 <Property name="text" type="java.lang.String" value="Excluir Item"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvar2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirItesActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnLimpar">
+            <Component class="javax.swing.JButton" name="btnLimparItens">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -566,12 +521,30 @@
                 <Property name="text" type="java.lang.String" value="Limpar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparItensActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblValorUniProdVendAt">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="___________________"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblValorTotProdVendAt">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="___________________"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnSalvar">
+        <Component class="javax.swing.JButton" name="btnFinalizaCompra">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -585,10 +558,10 @@
             <Property name="text" type="java.lang.String" value="Finalizar compra"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinalizaCompraActionPerformed"/>
           </Events>
         </Component>
-        <Container class="javax.swing.JPanel" name="pnlIntesSacola">
+        <Container class="javax.swing.JPanel" name="pnlItesSacola">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -640,14 +613,13 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="tblItensVend">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="8" rowCount="5">
-                        <Column editable="true" title="ID Venda" type="java.lang.Object"/>
+                      <Table columnCount="7" rowCount="5">
                         <Column editable="true" title="ID Cliente" type="java.lang.Object"/>
                         <Column editable="true" title="ID Produto" type="java.lang.Object"/>
                         <Column editable="true" title="CPF Cliente" type="java.lang.Object"/>

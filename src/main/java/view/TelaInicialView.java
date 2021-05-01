@@ -5,7 +5,9 @@
  */
 package view;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import utils.Validador;
 
 /**
  *
@@ -73,11 +75,9 @@ public class TelaInicialView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblConsultaClientes = new javax.swing.JTable();
         pnlInfoConsultClientes = new javax.swing.JPanel();
-        txtIdConsultaClientes = new javax.swing.JTextField();
-        lblIdConsultaClientes = new javax.swing.JLabel();
         lblNomeConsultaClientes = new javax.swing.JLabel();
-        txtNomeConsultaClientes = new javax.swing.JTextField();
         btnConsultasClientes = new javax.swing.JButton();
+        txtCpfClienteConsulCli = new javax.swing.JFormattedTextField();
         pnlTituloConsulClientes = new javax.swing.JPanel();
         lblTituloConsulClientes = new javax.swing.JLabel();
         pnlGerirProdutos = new javax.swing.JPanel();
@@ -95,15 +95,15 @@ public class TelaInicialView extends javax.swing.JFrame {
         pnlBackgroundConsultaProdutos = new javax.swing.JPanel();
         lblInfoConsuClientes1 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tblConsultaClientes1 = new javax.swing.JTable();
+        tblConsultaProdutos = new javax.swing.JTable();
         pnlInfoConsultProdutos = new javax.swing.JPanel();
-        txtIdConsultaClientes1 = new javax.swing.JTextField();
-        lblIdConsultaClientes1 = new javax.swing.JLabel();
-        lblNomeConsultaClientes1 = new javax.swing.JLabel();
-        txtNomeConsultaClientes1 = new javax.swing.JTextField();
+        txtIdConsultaProd = new javax.swing.JTextField();
+        lblIdConsultaProd = new javax.swing.JLabel();
         btnConsultasClientes1 = new javax.swing.JButton();
         pnlTituloConsulProdutos = new javax.swing.JPanel();
         lblTituloConsulProdutos = new javax.swing.JLabel();
+        pnlEstoqueProdutos = new javax.swing.JPanel();
+        btnGerirEstoque = new javax.swing.JButton();
         pnlGerirVendas = new javax.swing.JPanel();
         pnlBackgroundVendas = new javax.swing.JPanel();
         pnlMenuVendas = new javax.swing.JTabbedPane();
@@ -120,8 +120,6 @@ public class TelaInicialView extends javax.swing.JFrame {
         lblInfoConsultaVendas = new javax.swing.JLabel();
         pnlInfoConsultaVendas = new javax.swing.JPanel();
         txtCpfClienteConsulta = new javax.swing.JFormattedTextField();
-        txtIdVendaConsulta = new javax.swing.JTextField();
-        lblIdVendas = new javax.swing.JLabel();
         lblCpfCliVendas = new javax.swing.JLabel();
         btnConsultaVendas = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -172,6 +170,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         mnuProduto = new javax.swing.JMenu();
         mnuCadastroProduto = new javax.swing.JMenuItem();
         mnuAltExcProduto = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         mnuVenda = new javax.swing.JMenu();
         mnuCadastroVenda = new javax.swing.JMenuItem();
         mnuAltExcVenda = new javax.swing.JMenuItem();
@@ -383,7 +382,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         lblInfoConsuClientes.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblInfoConsuClientes.setForeground(new java.awt.Color(204, 255, 204));
         lblInfoConsuClientes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInfoConsuClientes.setText("Informe o ID ou nome para consulta");
+        lblInfoConsuClientes.setText("Informe o CPF para consulta");
 
         tblConsultaClientes.setBackground(new java.awt.Color(0, 0, 0));
         tblConsultaClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
@@ -412,7 +411,7 @@ public class TelaInicialView extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "CPF", "Nome", "E-mail", "DataNasc", "Telefone", "Sexo", "CEP", "Logradouro", "Numero", "Cidade", "Complemento", "Estado Civil"
+                "ID Cliente", "CPF", "Nome", "E-mail", "DataNasc", "Telefone", "Sexo", "CEP", "Logradouro", "Numero", "Cidade", "Complemento", "Estado Civil"
             }
         ));
         tblConsultaClientes.setGridColor(new java.awt.Color(102, 102, 102));
@@ -420,28 +419,9 @@ public class TelaInicialView extends javax.swing.JFrame {
 
         pnlInfoConsultClientes.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtIdConsultaClientes.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdConsultaClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 12)); // NOI18N
-        txtIdConsultaClientes.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdConsultaClientes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        lblIdConsultaClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
-        lblIdConsultaClientes.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdConsultaClientes.setText("ID:");
-
         lblNomeConsultaClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
         lblNomeConsultaClientes.setForeground(new java.awt.Color(204, 255, 204));
-        lblNomeConsultaClientes.setText("Nome:");
-
-        txtNomeConsultaClientes.setBackground(new java.awt.Color(204, 255, 204));
-        txtNomeConsultaClientes.setFont(new java.awt.Font("Microsoft Tai Le", 1, 12)); // NOI18N
-        txtNomeConsultaClientes.setForeground(new java.awt.Color(0, 0, 0));
-        txtNomeConsultaClientes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-        txtNomeConsultaClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeConsultaClientesActionPerformed(evt);
-            }
-        });
+        lblNomeConsultaClientes.setText("CPF:");
 
         btnConsultasClientes.setBackground(new java.awt.Color(204, 255, 204));
         btnConsultasClientes.setForeground(new java.awt.Color(0, 0, 0));
@@ -452,34 +432,43 @@ public class TelaInicialView extends javax.swing.JFrame {
             }
         });
 
+        txtCpfClienteConsulCli.setBackground(new java.awt.Color(255, 255, 255));
+        txtCpfClienteConsulCli.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        txtCpfClienteConsulCli.setForeground(new java.awt.Color(0, 0, 0));
+        try {
+            txtCpfClienteConsulCli.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtCpfClienteConsulCli.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtCpfClienteConsulCli.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpfClienteConsulCliActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlInfoConsultClientesLayout = new javax.swing.GroupLayout(pnlInfoConsultClientes);
         pnlInfoConsultClientes.setLayout(pnlInfoConsultClientesLayout);
         pnlInfoConsultClientesLayout.setHorizontalGroup(
             pnlInfoConsultClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsultClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIdConsultaClientes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdConsultaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
+                .addGap(228, 228, 228)
                 .addComponent(lblNomeConsultaClientes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeConsultaClientes)
-                .addGap(193, 193, 193)
+                .addComponent(txtCpfClienteConsulCli, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134)
                 .addComponent(btnConsultasClientes)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInfoConsultClientesLayout.setVerticalGroup(
             pnlInfoConsultClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsultClientesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInfoConsultClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdConsultaClientes)
-                    .addComponent(txtIdConsultaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCpfClienteConsulCli, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNomeConsultaClientes)
-                    .addComponent(txtNomeConsultaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConsultasClientes))
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         pnlTituloConsulClientes.setBackground(new java.awt.Color(204, 255, 204));
@@ -497,7 +486,7 @@ public class TelaInicialView extends javax.swing.JFrame {
             pnlTituloConsulClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlTituloConsulClientesLayout.createSequentialGroup()
                 .addGap(345, 345, 345)
-                .addComponent(lblTituloConsulClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTituloConsulClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                 .addGap(341, 341, 341))
         );
         pnlTituloConsulClientesLayout.setVerticalGroup(
@@ -707,12 +696,12 @@ public class TelaInicialView extends javax.swing.JFrame {
         lblInfoConsuClientes1.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblInfoConsuClientes1.setForeground(new java.awt.Color(204, 255, 204));
         lblInfoConsuClientes1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInfoConsuClientes1.setText("Informe o ID ou marca para consulta");
+        lblInfoConsuClientes1.setText("Informe o ID do produto para consulta");
 
-        tblConsultaClientes1.setBackground(new java.awt.Color(0, 0, 0));
-        tblConsultaClientes1.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
-        tblConsultaClientes1.setForeground(new java.awt.Color(204, 255, 204));
-        tblConsultaClientes1.setModel(new javax.swing.table.DefaultTableModel(
+        tblConsultaProdutos.setBackground(new java.awt.Color(0, 0, 0));
+        tblConsultaProdutos.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
+        tblConsultaProdutos.setForeground(new java.awt.Color(204, 255, 204));
+        tblConsultaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -739,33 +728,19 @@ public class TelaInicialView extends javax.swing.JFrame {
                 "ID", "Marca", "Modelo", "Modalidade", "Preço", "Cor", "Tamanho"
             }
         ));
-        tblConsultaClientes1.setGridColor(new java.awt.Color(102, 102, 102));
-        jScrollPane5.setViewportView(tblConsultaClientes1);
+        tblConsultaProdutos.setGridColor(new java.awt.Color(102, 102, 102));
+        jScrollPane5.setViewportView(tblConsultaProdutos);
 
         pnlInfoConsultProdutos.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtIdConsultaClientes1.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdConsultaClientes1.setFont(new java.awt.Font("Microsoft Tai Le", 1, 12)); // NOI18N
-        txtIdConsultaClientes1.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdConsultaClientes1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
+        txtIdConsultaProd.setBackground(new java.awt.Color(255, 255, 255));
+        txtIdConsultaProd.setFont(new java.awt.Font("Microsoft Tai Le", 1, 12)); // NOI18N
+        txtIdConsultaProd.setForeground(new java.awt.Color(0, 0, 0));
+        txtIdConsultaProd.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
 
-        lblIdConsultaClientes1.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
-        lblIdConsultaClientes1.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdConsultaClientes1.setText("ID:");
-
-        lblNomeConsultaClientes1.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
-        lblNomeConsultaClientes1.setForeground(new java.awt.Color(204, 255, 204));
-        lblNomeConsultaClientes1.setText("Marca:");
-
-        txtNomeConsultaClientes1.setBackground(new java.awt.Color(204, 255, 204));
-        txtNomeConsultaClientes1.setFont(new java.awt.Font("Microsoft Tai Le", 1, 12)); // NOI18N
-        txtNomeConsultaClientes1.setForeground(new java.awt.Color(0, 0, 0));
-        txtNomeConsultaClientes1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-        txtNomeConsultaClientes1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeConsultaClientes1ActionPerformed(evt);
-            }
-        });
+        lblIdConsultaProd.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
+        lblIdConsultaProd.setForeground(new java.awt.Color(204, 255, 204));
+        lblIdConsultaProd.setText("ID:");
 
         btnConsultasClientes1.setBackground(new java.awt.Color(204, 255, 204));
         btnConsultasClientes1.setForeground(new java.awt.Color(0, 0, 0));
@@ -781,27 +756,21 @@ public class TelaInicialView extends javax.swing.JFrame {
         pnlInfoConsultProdutosLayout.setHorizontalGroup(
             pnlInfoConsultProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsultProdutosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIdConsultaClientes1)
+                .addGap(277, 277, 277)
+                .addComponent(lblIdConsultaProd)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdConsultaClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
-                .addComponent(lblNomeConsultaClientes1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtNomeConsultaClientes1)
-                .addGap(193, 193, 193)
+                .addComponent(txtIdConsultaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(150, 150, 150)
                 .addComponent(btnConsultasClientes1)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInfoConsultProdutosLayout.setVerticalGroup(
             pnlInfoConsultProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsultProdutosLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInfoConsultProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdConsultaClientes1)
-                    .addComponent(txtIdConsultaClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNomeConsultaClientes1)
-                    .addComponent(txtNomeConsultaClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIdConsultaProd)
+                    .addComponent(txtIdConsultaProd, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConsultasClientes1))
                 .addContainerGap())
         );
@@ -882,7 +851,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         pnlConsultaProdutos.setLayout(pnlConsultaProdutosLayout);
         pnlConsultaProdutosLayout.setHorizontalGroup(
             pnlConsultaProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 947, Short.MAX_VALUE)
+            .addGap(0, 963, Short.MAX_VALUE)
             .addGroup(pnlConsultaProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlConsultaProdutosLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -900,6 +869,42 @@ public class TelaInicialView extends javax.swing.JFrame {
         );
 
         pnlMenuProdutos.addTab("Consulta Produtos", pnlConsultaProdutos);
+
+        pnlEstoqueProdutos.setBackground(new java.awt.Color(0, 0, 0));
+
+        btnGerirEstoque.setBackground(new java.awt.Color(204, 255, 204));
+        btnGerirEstoque.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
+        btnGerirEstoque.setForeground(new java.awt.Color(0, 0, 0));
+        btnGerirEstoque.setText("Gerir estoque de Produto");
+        btnGerirEstoque.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnGerirEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerirEstoqueActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEstoqueProdutosLayout = new javax.swing.GroupLayout(pnlEstoqueProdutos);
+        pnlEstoqueProdutos.setLayout(pnlEstoqueProdutosLayout);
+        pnlEstoqueProdutosLayout.setHorizontalGroup(
+            pnlEstoqueProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 951, Short.MAX_VALUE)
+            .addGroup(pnlEstoqueProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlEstoqueProdutosLayout.createSequentialGroup()
+                    .addGap(375, 375, 375)
+                    .addComponent(btnGerirEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(375, 375, 375)))
+        );
+        pnlEstoqueProdutosLayout.setVerticalGroup(
+            pnlEstoqueProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 532, Short.MAX_VALUE)
+            .addGroup(pnlEstoqueProdutosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlEstoqueProdutosLayout.createSequentialGroup()
+                    .addGap(223, 223, 223)
+                    .addComponent(btnGerirEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                    .addGap(224, 224, 224)))
+        );
+
+        pnlMenuProdutos.addTab("Estoque", pnlEstoqueProdutos);
 
         javax.swing.GroupLayout pnlBackgroundProdutosLayout = new javax.swing.GroupLayout(pnlBackgroundProdutos);
         pnlBackgroundProdutos.setLayout(pnlBackgroundProdutosLayout);
@@ -1072,11 +1077,11 @@ public class TelaInicialView extends javax.swing.JFrame {
         lblInfoConsultaVendas.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 18)); // NOI18N
         lblInfoConsultaVendas.setForeground(new java.awt.Color(204, 255, 204));
         lblInfoConsultaVendas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInfoConsultaVendas.setText("Informe o ID da Venda ou CPF do Cliente para consulta");
+        lblInfoConsultaVendas.setText("Informe o CPF do Cliente para consulta");
 
         pnlInfoConsultaVendas.setBackground(new java.awt.Color(0, 0, 0));
 
-        txtCpfClienteConsulta.setBackground(new java.awt.Color(204, 255, 204));
+        txtCpfClienteConsulta.setBackground(new java.awt.Color(255, 255, 255));
         txtCpfClienteConsulta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
         txtCpfClienteConsulta.setForeground(new java.awt.Color(0, 0, 0));
         try {
@@ -1090,15 +1095,6 @@ public class TelaInicialView extends javax.swing.JFrame {
                 txtCpfClienteConsultaActionPerformed(evt);
             }
         });
-
-        txtIdVendaConsulta.setBackground(new java.awt.Color(204, 255, 204));
-        txtIdVendaConsulta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtIdVendaConsulta.setForeground(new java.awt.Color(0, 0, 0));
-        txtIdVendaConsulta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 255, 204), 1, true));
-
-        lblIdVendas.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
-        lblIdVendas.setForeground(new java.awt.Color(204, 255, 204));
-        lblIdVendas.setText("ID:");
 
         lblCpfCliVendas.setFont(new java.awt.Font("Microsoft New Tai Lue", 1, 14)); // NOI18N
         lblCpfCliVendas.setForeground(new java.awt.Color(204, 255, 204));
@@ -1119,32 +1115,24 @@ public class TelaInicialView extends javax.swing.JFrame {
         pnlInfoConsultaVendasLayout.setHorizontalGroup(
             pnlInfoConsultaVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsultaVendasLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblIdVendas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtIdVendaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164)
+                .addGap(212, 212, 212)
                 .addComponent(lblCpfCliVendas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCpfClienteConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(161, 161, 161)
                 .addComponent(btnConsultaVendas)
-                .addGap(29, 29, 29))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlInfoConsultaVendasLayout.setVerticalGroup(
             pnlInfoConsultaVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlInfoConsultaVendasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInfoConsultaVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdVendas)
-                    .addComponent(txtIdVendaConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCpfCliVendas)
                     .addComponent(txtCpfClienteConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConsultaVendas))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        pnlInfoConsultaVendasLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCpfClienteConsulta, txtIdVendaConsulta});
 
         tblConsultVendas.setBackground(new java.awt.Color(0, 0, 0));
         tblConsultVendas.setFont(new java.awt.Font("Microsoft Tai Le", 1, 14)); // NOI18N
@@ -1184,18 +1172,18 @@ public class TelaInicialView extends javax.swing.JFrame {
         pnlConsultasVendasLayout.setHorizontalGroup(
             pnlConsultasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlConsultasVendasLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(pnlConsultasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlTituloConsultaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlConsultasVendasLayout.createSequentialGroup()
-                .addGap(241, 241, 241)
-                .addComponent(lblInfoConsultaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(199, 199, 199))
-            .addGroup(pnlConsultasVendasLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(pnlInfoConsultaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlConsultasVendasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlConsultasVendasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlTituloConsultaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2)
+                            .addGroup(pnlConsultasVendasLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(lblInfoConsultaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(pnlConsultasVendasLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(pnlInfoConsultaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlConsultasVendasLayout.setVerticalGroup(
@@ -1327,7 +1315,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         lblDataFimRelSint.setForeground(new java.awt.Color(204, 255, 204));
         lblDataFimRelSint.setText("Data Final:");
 
-        txtDataIniRelSint.setBackground(new java.awt.Color(204, 255, 204));
+        txtDataIniRelSint.setBackground(new java.awt.Color(255, 255, 255));
         txtDataIniRelSint.setForeground(new java.awt.Color(0, 0, 0));
         try {
             txtDataIniRelSint.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -1336,7 +1324,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         }
         txtDataIniRelSint.setToolTipText("");
 
-        txtDataFimRelSint.setBackground(new java.awt.Color(204, 255, 204));
+        txtDataFimRelSint.setBackground(new java.awt.Color(255, 255, 255));
         txtDataFimRelSint.setForeground(new java.awt.Color(0, 0, 0));
         try {
             txtDataFimRelSint.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -1469,7 +1457,7 @@ public class TelaInicialView extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        pnlMenuRelatorios.addTab("Relatório Sitético", pnlRelatorioSintetico);
+        pnlMenuRelatorios.addTab("Relatório Sintético", pnlRelatorioSintetico);
 
         pnlRelatorioAnalitico.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1522,7 +1510,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         lblDataFim.setForeground(new java.awt.Color(204, 255, 204));
         lblDataFim.setText("Data Final:");
 
-        txtAnaliDataIni.setBackground(new java.awt.Color(204, 255, 204));
+        txtAnaliDataIni.setBackground(new java.awt.Color(255, 255, 255));
         txtAnaliDataIni.setForeground(new java.awt.Color(0, 0, 0));
         try {
             txtAnaliDataIni.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -1531,7 +1519,7 @@ public class TelaInicialView extends javax.swing.JFrame {
         }
         txtAnaliDataIni.setToolTipText("");
 
-        txtAnaliDataFim.setBackground(new java.awt.Color(204, 255, 204));
+        txtAnaliDataFim.setBackground(new java.awt.Color(255, 255, 255));
         txtAnaliDataFim.setForeground(new java.awt.Color(0, 0, 0));
         try {
             txtAnaliDataFim.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -1807,6 +1795,15 @@ public class TelaInicialView extends javax.swing.JFrame {
         });
         mnuProduto.add(mnuAltExcProduto);
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem1.setText("Estoque");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnuProduto.add(jMenuItem1);
+
         mnuSistema.add(mnuProduto);
 
         mnuVenda.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(204, 255, 204), new java.awt.Color(204, 255, 204), null));
@@ -1857,10 +1854,6 @@ public class TelaInicialView extends javax.swing.JFrame {
         TelaCadastroClientesView castroCliente = new TelaCadastroClientesView();
         castroCliente.setVisible(true);
     }//GEN-LAST:event_mnuCadastroClientesActionPerformed
-
-    private void txtNomeConsultaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeConsultaClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeConsultaClientesActionPerformed
 
     private void btnAltExcClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltExcClientesActionPerformed
         TelaAlteExclClientesView altExcClientes = new TelaAlteExclClientesView();
@@ -1925,27 +1918,45 @@ public class TelaInicialView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadasVendAntActionPerformed
 
     private void btnConsultasClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasClientesActionPerformed
-        if(txtIdConsultaClientes.getText().trim().equals("") && txtNomeConsultaClientes.getText().trim().equals("")){
-            JOptionPane.showMessageDialog(this, "Informe um dos campos para pesquisar");
+        Validador validacao = new Validador();
+        
+        validacao.ValidarCpf(txtCpfClienteConsulCli);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Informe o CPF para consulta");
         }
     }//GEN-LAST:event_btnConsultasClientesActionPerformed
 
     private void btnConsultaVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaVendasActionPerformed
+      
+        Validador validacao = new Validador();
         
-        if(txtIdVendaConsulta.getText().trim().equals("") && txtCpfClienteConsulta.getText().trim().equals("   .   .   -  ")){
-            JOptionPane.showMessageDialog(this, "Informe um dos campos para pesquisar");
+        validacao.ValidarCpf(txtCpfClienteConsulta);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Informe o valor do CPF para consulta");
         }
     }//GEN-LAST:event_btnConsultaVendasActionPerformed
 
     private void btnConsultaRelSintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaRelSintActionPerformed
-        if(txtDataIniRelSint.getText().trim().equals("") ||txtDataFimRelSint.getText().trim().equals("") ){
-            JOptionPane.showMessageDialog(this, "Informe as datas corretamente para consulta");
+        Validador validacao = new Validador();
+        
+        validacao.ValidarData(txtDataIniRelSint);
+        validacao.ValidarData(txtDataFimRelSint);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha os campos em vermelho");
         }
     }//GEN-LAST:event_btnConsultaRelSintActionPerformed
 
     private void btnConsultaRelAnaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaRelAnaliActionPerformed
-        if(txtAnaliDataIni.getText().trim().equals("") ||txtAnaliDataFim.getText().trim().equals("") ){
-            JOptionPane.showMessageDialog(this, "Informe as datas corretamente para consulta");
+         Validador validacao = new Validador();
+        
+        validacao.ValidarData(txtAnaliDataIni);
+        validacao.ValidarData(txtAnaliDataFim);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha os campos em vermelho");
         }
     }//GEN-LAST:event_btnConsultaRelAnaliActionPerformed
 
@@ -1973,12 +1984,14 @@ public class TelaInicialView extends javax.swing.JFrame {
         alterarExcluirProd.setVisible(true);
     }//GEN-LAST:event_mnuAltExcProdutoActionPerformed
 
-    private void txtNomeConsultaClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeConsultaClientes1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeConsultaClientes1ActionPerformed
-
     private void btnConsultasClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasClientes1ActionPerformed
-        // TODO add your handling code here:
+        Validador validacao = new Validador();
+        
+        validacao.ValidarNumero(txtIdConsultaProd);
+        
+        if(validacao.hasErro()){
+            JOptionPane.showMessageDialog(this, "Preencha corretamento o ID para consultar");
+        }
     }//GEN-LAST:event_btnConsultasClientes1ActionPerformed
 
     private void btnCadasProdAntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadasProdAntActionPerformed
@@ -1988,6 +2001,20 @@ public class TelaInicialView extends javax.swing.JFrame {
     private void btnConsProdProxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsProdProxActionPerformed
         pnlMenuProdutos.setSelectedIndex(2);
     }//GEN-LAST:event_btnConsProdProxActionPerformed
+
+    private void btnGerirEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerirEstoqueActionPerformed
+        TelaEstoqueProdView gerirEstoqueProd = new TelaEstoqueProdView();
+        gerirEstoqueProd.setVisible(true);
+    }//GEN-LAST:event_btnGerirEstoqueActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        TelaEstoqueProdView gerirEstoqueProd = new TelaEstoqueProdView();
+        gerirEstoqueProd.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void txtCpfClienteConsulCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfClienteConsulCliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpfClienteConsulCliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2045,6 +2072,8 @@ public class TelaInicialView extends javax.swing.JFrame {
     private javax.swing.JButton btnConsultaVendas;
     private javax.swing.JButton btnConsultasClientes;
     private javax.swing.JButton btnConsultasClientes1;
+    private javax.swing.JButton btnGerirEstoque;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2059,9 +2088,7 @@ public class TelaInicialView extends javax.swing.JFrame {
     private javax.swing.JLabel lblDataIniSint;
     private javax.swing.JLabel lblDe;
     private javax.swing.JLabel lblDeRelSint;
-    private javax.swing.JLabel lblIdConsultaClientes;
-    private javax.swing.JLabel lblIdConsultaClientes1;
-    private javax.swing.JLabel lblIdVendas;
+    private javax.swing.JLabel lblIdConsultaProd;
     private javax.swing.JLabel lblInfoConsuClientes;
     private javax.swing.JLabel lblInfoConsuClientes1;
     private javax.swing.JLabel lblInfoConsultaVendas;
@@ -2069,7 +2096,6 @@ public class TelaInicialView extends javax.swing.JFrame {
     private javax.swing.JLabel lblInfoRelSint;
     private javax.swing.JLabel lblIntroducao;
     private javax.swing.JLabel lblNomeConsultaClientes;
-    private javax.swing.JLabel lblNomeConsultaClientes1;
     private javax.swing.JLabel lblSomaTotalVendRelAnali;
     private javax.swing.JLabel lblSomaTotalVendRelSint;
     private javax.swing.JLabel lblTituloBemVindo;
@@ -2116,6 +2142,7 @@ public class TelaInicialView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlConultaProdutos;
     private javax.swing.JPanel pnlDataRelSint;
     private javax.swing.JPanel pnlDatasRelAnali;
+    private javax.swing.JPanel pnlEstoqueProdutos;
     private javax.swing.JPanel pnlGerirClientes;
     private javax.swing.JPanel pnlGerirProdutos;
     private javax.swing.JPanel pnlGerirRelatorios;
@@ -2138,18 +2165,15 @@ public class TelaInicialView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlTituloRelSint;
     private javax.swing.JTable tblConsultVendas;
     private javax.swing.JTable tblConsultaClientes;
-    private javax.swing.JTable tblConsultaClientes1;
+    private javax.swing.JTable tblConsultaProdutos;
     private javax.swing.JTable tblRelatorioAnali;
     private javax.swing.JTable tblRelatorioSint;
     private javax.swing.JFormattedTextField txtAnaliDataFim;
     private javax.swing.JFormattedTextField txtAnaliDataIni;
+    private javax.swing.JFormattedTextField txtCpfClienteConsulCli;
     private javax.swing.JFormattedTextField txtCpfClienteConsulta;
     private javax.swing.JFormattedTextField txtDataFimRelSint;
     private javax.swing.JFormattedTextField txtDataIniRelSint;
-    private javax.swing.JTextField txtIdConsultaClientes;
-    private javax.swing.JTextField txtIdConsultaClientes1;
-    private javax.swing.JTextField txtIdVendaConsulta;
-    private javax.swing.JTextField txtNomeConsultaClientes;
-    private javax.swing.JTextField txtNomeConsultaClientes1;
+    private javax.swing.JTextField txtIdConsultaProd;
     // End of variables declaration//GEN-END:variables
 }
